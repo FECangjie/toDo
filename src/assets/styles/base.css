@@ -1,0 +1,16 @@
+h1{
+    color: #999;
+}
+
+.btn-a {
+font-size: 18px;
+padding: 5px 10px;
+background-color: #a5d16d;
+color: #fff;
+box-shadow: 0 0 5px #a4cf6c inset, 0 1px 1px #eee;
+cursor: pointer;
+}
+
+a:hover, a:hover{
+opacity:0.9;
+}
