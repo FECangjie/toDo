@@ -1,16 +1,16 @@
-// 引用模板
+// 路由
 import Vue from 'vue';
 import Router from 'vue-router';
-import indexPage from './views/index.vue'
-import homePage from './views/home.vue'
-import aboutPage from './views/about.vue'
+import sharePage from './pages/share'
+import homePage from './pages/share'
+import aboutPage from './pages/share'
 
 Vue.use(Router)
 
 export default new Router({
     routes:[
         {
-            path:'/',
+            path:'/home',
             component: homePage
         },
         {
@@ -18,8 +18,8 @@ export default new Router({
             component: aboutPage
         },
         {
-            path:'/index',
-            component: indexPage
+            path:'/share',
+            component: sharePage
         }
     ]
 })

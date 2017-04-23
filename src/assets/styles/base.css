@@ -14,3 +14,9 @@ cursor: pointer;
 a:hover, a:hover{
 opacity:0.9;
 }
+
+.demo-flex {
+  display: flex;
+  transition: all .5s;
+  user-select: none;
+}

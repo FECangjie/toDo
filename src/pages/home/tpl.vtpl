@@ -1,0 +1,55 @@
+<div class="pages-index">
+  <div class="base-info">
+    <div class="main-info">
+      <h3>
+        昨日联系业主数(位)
+      </h3>
+      <h1>
+        {{lastContactedNum}}
+      </h1>
+    </div>
+    <div class="sub-info-container">
+      <div class="sub-info">
+        <div class="sub-info-item">
+          <h3>
+            资料完备率 ?
+          </h3>
+          <h2>
+            {{ownerCompletedRate}}%
+          </h2>
+        </div>
+        <div class="sub-info-item">
+          <h3>
+            资料确认率 ?
+          </h3>
+          <h2>
+            {{ownerConfirmedRate}}%
+          </h2>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="link-to-mycollect">
+    <router-link to="/link-app-yezhu/favoritelist">
+      <Lui-cell :label="'共' + collectedNum + '个'" >
+        <div class="big-title big-title-favorite" slot='selfLeftTemplate'>我的收藏</div>
+      </Lui-cell>
+    </router-link>
+  </div>
+
+  <Lui-cell-group customerClass="my-work-range">
+    <Lui-cell :showDefaultRightIcon=false>
+      <div slot="selfLeftTemplate" class="big-title">我的维护范围</div>
+    </Lui-cell>
+    <!-- 拉取数据 -->
+    <div v-if="!relatedRegionList.length">
+      数据加载中...
+    </div>
+    <div v-if="relatedRegionList.length" class="my-work-range-items">
+      <Lui-cell v-for="item in relatedRegionList" :title=item.resblockName :label="'完备率' + item.completedRate + ' . '+ item.buildingNum +'栋楼'"  ></Lui-cell>
+    </div>
+  </Lui-cell-group>
+
+</div>

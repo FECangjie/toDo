@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var tpl = require.resolve('./vtpl-loader.js')
 
 module.exports = {
     entry: './src/main.js', // 值可以是字符串、数组或对象
@@ -9,40 +10,40 @@ module.exports = {
         filename: 'build.js'
     },
     module: {
-        rules: [
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                    }
-                    // other vue-loader options go here
-                }
-            },
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]'
-                }
-            }
-            //自己加的
-            ,
-            {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
-            }
-            ,
-            {
-                test: /\.scss$/,
-                loader: "style-loader!css-loader!sass-loader!"
-            }
-        ]
+      loaders: [
+    {
+      test: /\.vue$/,
+      loader: 'vue-loader'
+    },
+    {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
+    },
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    },
+    {
+      test: /\.less$/,
+      loader: 'style-loader!css-loader!less-loader!'
+    },
+    {
+      test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+      loader: 'file-loader'
+    },
+    {
+      test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
+      loader: 'file-loader',
+      query: {
+        name: '[name].[ext]?[hash]'
+      }
+    },
+    {
+      test: /\.vtpl$/,
+      loader: tpl
+    }
+  ]
     },
     resolve: {
         alias: {
