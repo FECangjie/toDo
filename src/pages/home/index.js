@@ -1,25 +1,24 @@
 /**
  * @file: 首页
- * @author: wangshiying@lianjia.com
+ * @author: qinchao@lianjia.com
  */
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
+import Music from './music'
 
-export default Vue.component('IndexPage', {
+export default Vue.component('HomePage', {
   data () {
     return {
       isLoading: true,
       errorTip: '',
-      lastContactedNum: '-',
-      ownerCompletedRate: '-',
-      ownerConfirmedRate: '-',
-      collectedNum: '-',
-      relatedRegionList: []
+      type: ''
     }
   },
   created () {
     let me = this
+
+    /** ajax例子
     $http.get('api/linkApp/index.json').then(
       (res) => {
         me.isLoading = false
@@ -38,7 +37,7 @@ export default Vue.component('IndexPage', {
       (res) => {
         me.isLoading = false
       }
-    )
+    ) **/
   },
   template: tpl
 })

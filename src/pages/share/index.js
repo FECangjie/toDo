@@ -4,6 +4,7 @@
  */
 import Vue from 'vue'
 import tpl from './tpl.vtpl'
+import './style.less'
 
 export default Vue.component('SharePage', {
   data () {

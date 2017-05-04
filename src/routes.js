@@ -2,13 +2,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import sharePage from './pages/share'
-import homePage from './pages/share'
-import aboutPage from './pages/share'
+import homePage from './pages/home'
+import aboutPage from './pages/about'
 
 Vue.use(Router)
 
 export default new Router({
     routes:[
+        {
+            path:'/',
+            component: homePage
+        },
         {
             path:'/home',
             component: homePage

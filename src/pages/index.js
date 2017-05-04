@@ -1,10 +1,11 @@
 /**
- * @file: 首页
+ * @file: 页面框架
  * @author: qinchao@lianjia.com
  */
 import Vue from 'vue'
 import tpl from './tpl.vtpl'
 import HeaderTab from '../components/header.vue';
+import './style.less'
 
 export default Vue.component('IndexPage', {
   data () {
@@ -15,8 +16,7 @@ export default Vue.component('IndexPage', {
     }
   },
   methods: {
-     handleSelect(key, keyPath) {
-       console.log(key, keyPath);
+     handleSelect(key, keyPath) { // nav select
      }
    },
   created () {

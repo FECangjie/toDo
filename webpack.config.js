@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       test: /\.less$/,
-      loader: 'style-loader!css-loader!less-loader!'
+      loader: 'style-loader!css-loader!less-loader'
     },
     {
       test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
@@ -46,7 +46,14 @@ module.exports = {
   ]
     },
     resolve: {
+        //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
+        extensions: ['.js', '.json', '.less'],
+        //模块别名定义，方便后续直接引用别名，无须多写长长的地址
         alias: {
+            img: 'src/assets/img',
+            AppStore : 'js/stores/AppStores.js',//后续直接 require('AppStore') 即可
+            ActionType : 'js/actions/ActionType.js',
+            AppAction : 'js/actions/AppAction.js',
             'vue$': 'vue/dist/vue.esm.js'
         }
     },
@@ -59,7 +66,7 @@ module.exports = {
         hints: false
     },
     devtool: '#eval-source-map'
-}
+  }
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map'

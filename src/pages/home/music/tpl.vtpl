@@ -1,0 +1,22 @@
+<div>
+<el-row>
+  <el-col :span="12">
+  <div class="grid-content bg-purple">
+  	<div>
+  		<img v-bind:src="img">
+  	</div>
+  </div>
+  </el-col>
+  <el-col :span="12">
+  <div class="grid-content bg-purple-light">
+  	<ul style="text-align:center">
+      <li v-for="item in content">
+          {{ item.text }}
+      </li>
+  </ul>
+  </div>
+  </el-col>
+</el-row>
+  
+  <div class="demo-flex"></div>
+</div>
