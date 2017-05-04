@@ -3,11 +3,11 @@ var webpack = require('webpack')
 var tpl = require.resolve('./vtpl-loader.js')
 
 module.exports = {
-    entry: './src/main.js', // 值可以是字符串、数组或对象
+    entry: './src/main.js', // 入口文件
     output: {
         path: path.resolve(__dirname, './dist'), // Webpack结果存储
-        publicPath: '/home/ftp/r/rangwow/wwwroot/to-do/dist/', // “publicPath”项则被许多Webpack的插件用于在生产模式和开发模式下下更新内嵌到css、html，img文件里的url值
-        filename: 'build.js'
+        publicPath: './dist/', // “publicPath”项则被许多Webpack的插件用于在生产模式和开发模式下下更新内嵌到css、html，img文件里的url值
+        filename: '[name].js'
     },
     module: {
       loaders: [
