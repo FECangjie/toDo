@@ -13,6 +13,7 @@ import './assets/styles/index.css'
 
 Vue.config.debug = true // 开启错误提示
 Vue.use(ElementUI)
+
 new Vue({
         router,
         el: '#appIndex',
