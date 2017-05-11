@@ -16,7 +16,8 @@ export default Vue.component('LoginPage', {
       restaurants: [],
       state3: '',
       btuText: '进入',
-      loading: false
+      loading: false,
+      
     }
   },
   

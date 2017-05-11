@@ -1,7 +1,22 @@
 .iw-chat {
-	h2 {
-		padding: 50px 0;
+	.header {
+	  .el-carousel__item h3 {
+	  	position: absolute;
+	  	left: 40%;
+	  	top: 10%;
+	    color: #323232;
+	    font-size: 24px;
+	    margin: 0 auto;
+	  }
+	  .el-carousel__item:nth-child(2n) {
+	     background-color: #99a9bf;
+	  }
+	  
+	  .el-carousel__item:nth-child(2n+1) {
+	     background-color: #d3dce6;
+	  }
 	}
+	
 	.content {
 		border: 0px solid #eee;
 		.person {

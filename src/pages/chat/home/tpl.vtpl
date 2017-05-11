@@ -1,38 +1,61 @@
 <div class="iw-chat">
-<div class="header">
-  <h2>{{ title }}</h2>  
-</div>
-<div class="content">
-  <div class="person">
-    <span class="img">
-      <img :src="imgUrl">
-    </span>
-    {{ name }}
-    <span class="btns">
-      <el-button type="info" class="button" >反馈</el-button>
-      <el-button type="info" class="button" >设置</el-button>
-      <el-button type="info" class="button" >创建房间</el-button>
-    </span>
+  <div class="header">
+    <!-- <span class="demonstration">{{ title }}</span> -->
+      <el-carousel trigger="click" height="225px">
+        <el-carousel-item v-for="item in 4" :key="item">
+          <!-- <h3>{{ title[item-1] }}</h3> -->
+          <img :src="imgUrls[item-1]">   
+        </el-carousel-item>
+      </el-carousel> 
   </div>
-  <div class="rooms">
-    <el-row :gutter="20">
-      <el-col :span="5" v-for="(o, index) in rooms" :key="o" :offset="index > 0 ? 1 : 0">
-        <el-card :body-style="{ padding: '0px' }">
-          <div style="padding: 14px;">
-            <h4>{{index === 0 ? '胸大的进' : index === 1 ? '『﹎·●﹏葬爱_」┌家族' : index === 2 ? '喷我一句死个爹。' : '叫爸爸'}}</h4>
-            <div class="content">
-            <p>{{index === 0 ? 'ca..' : index === 1 ? '︶￣回憶 是首只唱給悲傷著聽的歌﹏ 。' : index === 2 ? 'cnm' : '叫爸爸'}}</p>
-            <p>{{index === 0 ? '？？？' : index === 1 ? '我願是一只撲火的飛蛾' : index === 2 ? '楼主傻叼' : '叫爸爸'}}</p>
+  <div class="content">
+    <div class="person">
+      <span class="img">
+        <img :src="imgUrl">
+      </span>
+      {{ name }}
+      <span class="btns">
+        <el-button type="info" class="button" @click="onSuggest">反馈</el-button>
+        <el-button type="info" class="button" @click="onSet">设置</el-button>
+        <el-button type="info" class="button" @click="onCreate">创建房间</el-button>
+      </span>
+    </div>
+    <div class="rooms">
+      <el-row :gutter="20">
+        <el-col :span="5" v-for="(o, index) in rooms" :key="o" :offset="index > 0 ? 1 : 0">
+          <el-card :body-style="{ padding: '0px' }">
+            <div style="padding: 14px;">
+              <h4>{{index === 0 ? '胸大的进' : index === 1 ? '『﹎·●﹏葬爱_」┌家族' : index === 2 ? '喷我一句死个爹。' : '叫爸爸'}}</h4>
+              <div class="content">
+              <p>{{index === 0 ? 'ca..' : index === 1 ? '︶￣回憶 是首只唱給悲傷著聽的歌﹏ 。' : index === 2 ? 'cnm' : '叫爸爸'}}</p>
+              <p>{{index === 0 ? '？？？' : index === 1 ? '我願是一只撲火的飛蛾' : index === 2 ? '楼主傻叼' : '叫爸爸'}}</p>
+              </div>
+              <div class="bottom clearfix">
+                <time class="time">{{ currentDate }}</time>
+                <el-button type="text" class="button">进入</el-button>
+              </div>
             </div>
-            <div class="bottom clearfix">
-              <time class="time">{{ currentDate }}</time>
-              <el-button type="text" class="button">进入</el-button>
-            </div>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
   </div>
-</div>
 
+  <el-dialog visible="dialogFormVisible">
+  <el-form :model="form">
+    <el-form-item label="活动名称" :label-width="formLabelWidth">
+      <el-input v-model="form.name" auto-complete="off"></el-input>
+    </el-form-item>
+    <el-form-item label="活动区域" :label-width="formLabelWidth">
+      <el-select v-model="form.region" placeholder="请选择活动区域">
+        <el-option label="区域一" value="shanghai"></el-option>
+        <el-option label="区域二" value="beijing"></el-option>
+      </el-select>
+    </el-form-item>
+  </el-form>
+  <div slot="footer" class="dialog-footer">
+    <el-button @click="dialogFormVisible = false">取 消</el-button>
+    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+  </div>
+</el-dialog>
 </div>
