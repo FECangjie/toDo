@@ -4,7 +4,7 @@
  */
 import Vue from 'vue'
 import tpl from './tpl.vtpl'
-import HeaderTab from '../components/header.vue';
+import HeaderTab from '../components/header';
 import './style.less'
 
 export default Vue.component('IndexPage', {
@@ -16,8 +16,6 @@ export default Vue.component('IndexPage', {
     }
   },
   methods: {
-     handleSelect(key, keyPath) { // nav select
-     }
    },
   created () {
     let me = this

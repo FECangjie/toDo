@@ -5,6 +5,7 @@ import sharePage from './pages/share'
 import homePage from './pages/home'
 import aboutPage from './pages/about'
 import errorPage from './pages/error'
+import loginPage from './pages/login'
 
 Vue.use(Router)
 
@@ -12,7 +13,7 @@ export default new Router({
     routes:[
         {
             path:'/',
-            component: homePage
+            component: loginPage
         },
         {
             path:'/home',

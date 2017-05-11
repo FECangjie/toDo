@@ -28,3 +28,5 @@ a:hover{text-decoration:none;}
 .clearRight{
 	clear:right;
 	}
+
+html, body {width:100%;height:100%;}
