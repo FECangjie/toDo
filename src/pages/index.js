@@ -4,7 +4,7 @@
  */
 import Vue from 'vue'
 import tpl from './tpl.vtpl'
-import HeaderTab from '../components/header';
+// import comHeader from '../components/header';
 import './style.less'
 
 export default Vue.component('IndexPage', {
@@ -12,7 +12,9 @@ export default Vue.component('IndexPage', {
     return {
       activeIndex: '1',
       isLoading: true,
-      msg: ''
+      msg: '',
+
+      name: ''
     }
   },
   methods: {

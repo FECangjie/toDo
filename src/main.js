@@ -5,12 +5,20 @@
  */
 import Vue from 'vue'
 import App from './pages'
-import router from './routes.js'
+import Axios from 'axios'
+
+import { router } from './router.js'
 import ElementUI from 'element-ui'
 import './assets/styles/reset.css'
 import 'element-ui/lib/theme-default/index.css'
 import './assets/styles/index.css'
 
+window.$http = Axios.create({
+  baseURL: '/',
+  timeout: 25000
+})
+
+Vue.config.devtools = true
 Vue.config.debug = true // 开启错误提示
 Vue.use(ElementUI)
 

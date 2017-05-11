@@ -1,0 +1,4 @@
+<div>
+  <Com-chat-header></Com-chat-header>
+  <ChatHomePage v-bind:name="name"></ChatHomePage>
+</div>

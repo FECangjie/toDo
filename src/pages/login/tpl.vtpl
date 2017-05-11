@@ -24,9 +24,7 @@
 <el-row type="flex" justify="center" align="middle" class="login-wrap">
 
 <el-col :span="8" class="col-button">
-          <el-button type="primary" class="button" @click="login">进入</el-button>
+          <el-button type="primary" class="button" @click="login" :loading="loading">{{btuText}}</el-button>
   </el-col>
   </el-row>
-
-
 </div>

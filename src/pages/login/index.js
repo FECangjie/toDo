@@ -13,7 +13,9 @@ export default Vue.component('LoginPage', {
       imgUrl: 'src/assets/img/od.jpeg',
       currentDate: moment(new Date()).format('YYYY-MM-DD'),
       restaurants: [],
-      state3: ''  
+      state3: '',
+      btuText: '进入',
+      loading: false
     }
   },
   
@@ -34,20 +36,38 @@ export default Vue.component('LoginPage', {
           { "value": "金日天", "address": "" },
           { "value": "屌爆了", "address": "" },
           { "value": "大炮来袭", "address": "" },
+          { "value": "逼逼侠", "address": "" },
+          { "value": "栓子", "address": "" },
         ];
       },
       handleSelect(item) {
-        console.log(item);
+        let me = this
+        me.name = item.value
+        console.log(me.name);
       },
       handleIconClick(ev) {
         console.log(ev);
       },
       login () {
-        alert(1)
+        let me = this
+        if (!me.name) {
+           this.$alert('昵称不能为空。', '请输入昵称', {
+            confirmButtonText: '确定',
+            callback: action => {
+              
+            }
+          })
+        } else {
+          me.loading = true
+          me.btuText = '正在进入'
+          setTimeout (item => {
+            window.location.href = '/chat?name=' + encodeURI(me.name)
+          }, 3000) 
+        }
       }
     },
     mounted() {
-      this.restaurants = this.loadAll();
+      this.restaurants = this.loadAll()
     },
     created () {
     let me = this
