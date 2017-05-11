@@ -5,6 +5,7 @@
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
+// import xbAutocomplete from '../../components/autocomplete';
 
 export default Vue.component('LoginPage', {
   data () {
@@ -21,6 +22,8 @@ export default Vue.component('LoginPage', {
   
   methods: {
       querySearch(queryString, cb) {
+        let me = this
+        me.name = queryString
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
         // 调用 callback 返回建议列表的数据
@@ -40,14 +43,16 @@ export default Vue.component('LoginPage', {
           { "value": "栓子", "address": "" },
         ];
       },
+
       handleSelect(item) {
         let me = this
         me.name = item.value
-        console.log(me.name);
       },
+
       handleIconClick(ev) {
-        console.log(ev);
       },
+
+      
       login () {
         let me = this
         if (!me.name) {
