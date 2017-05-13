@@ -17,7 +17,7 @@ export default Vue.component('LoginPage', {
       state3: '',
       btuText: '进入',
       loading: false,
-      
+
     }
   },
   
@@ -77,7 +77,25 @@ export default Vue.component('LoginPage', {
     },
     created () {
     let me = this
-
+    fetch("login/tuijianName.json", {
+      method: "post",
+      body: {
+        houseCode: 1,
+        comment: 1
+      },
+      formData: true
+    }).then(function(res) {
+      // res instanceof Response == true.
+      if (res.ok) {
+        res.json().then(function(data) {
+          console.log(data.entries);
+            });
+        } else {
+          console.log("Looks like the response wasn't perfect, got status", res.status);
+        }
+      }, function(e) {
+        console.log("Fetch failed!", e);
+      })
   },
   template: tpl
 })

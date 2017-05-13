@@ -6,6 +6,7 @@
 import Vue from 'vue'
 import App from './pages'
 import Axios from 'axios'
+import Fetch from 'common/fetch.js'
 
 import { router } from './router.js'
 import ElementUI from 'element-ui'

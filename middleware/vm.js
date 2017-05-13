@@ -1,10 +1,8 @@
 /**
- * @file: mock 数据
- * @author: wangshiying@lianjia.com
+ * @file: 路径
+ * @author: qinchao@lianjia.com
  */
 var fs = require('fs')
-var Velocity = require('velocity')
-var processShiro = require('./util/shiro')
 
 var cacheSync = {}
 var cacheCommonData = {}
