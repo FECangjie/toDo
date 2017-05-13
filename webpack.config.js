@@ -1,59 +1,37 @@
 var path = require('path')
 var webpack = require('webpack')
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js')
 var tpl = require.resolve('./vtpl-loader.js')
 
 module.exports = {
+  // plugins: [commonsPlugin],
     entry: './src/main.js', // 入口文件
     output: {
         path: path.resolve(__dirname, './dist'), // Webpack结果存储
         publicPath: './dist/', // “publicPath”项则被许多Webpack的插件用于在生产模式和开发模式下下更新内嵌到css、html，img文件里的url值
-        filename: '[name].js'
+        filename: 'common.js'
     },
     module: {
       loaders: [
-    {
-      test: /\.vue$/,
-      loader: 'vue-loader'
-    },
-    {
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/
-    },
-    {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
-    },
-    {
-      test: /\.less$/,
-      loader: 'style-loader!css-loader!less-loader'
-    },
-    {
-      test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-      loader: 'file-loader'
-    },
-    {
-      test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
-      loader: 'file-loader',
+    { test: /\.vue$/, loader: 'vue-loader' },
+    { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015']}},
+    { test: /\.css$/, loader: 'style-loader!css-loader' },
+    { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+    { test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/, loader: 'file-loader' },
+    { test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/, loader: 'file-loader',
       query: {
         name: '[name].[ext]?[hash]'
       }
     },
-    {
-      test: /\.vtpl$/,
-      loader: tpl
-    }
+    { test: /\.vtpl$/, loader: tpl }
   ]
-    },
+ },
     resolve: {
         //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
         extensions: ['.js', '.json', '.less'],
         //模块别名定义，方便后续直接引用别名，无须多写长长的地址
         alias: {
             img: 'src/assets/img',
-            AppStore : 'js/stores/AppStores.js',//后续直接 require('AppStore') 即可
-            ActionType : 'js/actions/ActionType.js',
-            AppAction : 'js/actions/AppAction.js',
             'vue$': 'vue/dist/vue.esm.js'
         }
     },
@@ -65,6 +43,14 @@ module.exports = {
     performance: {
         hints: false
     },
+    // plugins: [
+    // //压缩打包的文件
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     //supresses warnings, usually from module minification
+    //     warnings: false
+    //   }
+    // })],
     devtool: '#eval-source-map'
   }
 
@@ -78,11 +64,21 @@ if (process.env.NODE_ENV === 'production') {
             }
         }),
         new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
+          compressor: {
+            warnings: false,
+            // remove `console.*`
+            drop_console: true
+          },
+          output: {
+            comments: false
+          }
         }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     sourceMap: true,
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         })

@@ -14,13 +14,13 @@ export default Vue.component('ChatHomePage', {
       errorTip: '',
       title: ['欢迎'+this.name+'来到虾哔哔','欢迎'+this.name+'来瞎逼逼','欢迎'+this.name+'来逼次几句','欢迎'+this.name+'来舌战群乳'],
       imgUrl: 'src/assets/img/od.jpeg',
-      imgUrls: ['src/assets/img/lunbo1.png', 'src/assets/img/lunbo2.jpeg', 'src/assets/img/lunbo3.jpeg', 'src/assets/img/lunbo4.jpg'],
+      imgUrls: ['src/assets/img/lunbo3.jpeg', 'src/assets/img/lunbo2.jpeg', 'src/assets/img/lunbo3.jpeg', 'src/assets/img/lunbo4.jpg'],
       rooms: 3,
       currentDate: moment(new Date()).format('MM-DD hh:mm'),
 
       // 弹窗
       formLabelWidth: '120px',
-      dialogFormVisible: true,
+      dialogFormVisible: false,
       form: {
         name: '',
         region: '',
@@ -37,6 +37,8 @@ export default Vue.component('ChatHomePage', {
     // 创建房间按钮
     onCreate () { 
       // 入口 
+      let me = this
+      this.dialogFormVisible = true
     },
     // 设置按钮
     onSet () {
