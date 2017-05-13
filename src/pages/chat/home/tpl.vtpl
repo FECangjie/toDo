@@ -41,21 +41,22 @@
     </div>
   </div>
 
-  <el-dialog title="收货地址" :value="dialogFormVisible">
-  <el-form :model="form">
-    <el-form-item label="活动名称" :label-width="formLabelWidth">
-      <el-input v-model="form.name" auto-complete="off"></el-input>
-    </el-form-item>
-    <el-form-item label="活动区域" :label-width="formLabelWidth">
-      <el-select v-model="form.region" placeholder="请选择活动区域">
-        <el-option label="区域一" value="shanghai"></el-option>
-        <el-option label="区域二" value="beijing"></el-option>
-      </el-select>
-    </el-form-item>
+  <el-dialog class="create"  :title=createTitle :value="dialogFormVisible" :visible="dialogFormVisible">
+  <el-form ref="form" :model="form" :label-width="formLabelWidth">
+      <el-form-item label="房间类型" >
+         <el-radio-group v-model="form.radio" size="large">
+              <el-radio-button label="8人"></el-radio-button>
+              <el-radio-button label="12人"></el-radio-button>
+              <el-radio-button label="20人"></el-radio-button>
+            </el-radio-group>
+      </el-form-item>
+    <el-form-item label="房间名称" >
+    <el-input v-model="form.name" style="width:70%;margin-left:10px"></el-input>
+  </el-form-item>
   </el-form>
   <div slot="footer" class="dialog-footer">
     <el-button @click="dialogFormVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+    <el-button type="primary" @click="onCreateSubmit">确 定</el-button>
   </div>
 </el-dialog>
 </div>

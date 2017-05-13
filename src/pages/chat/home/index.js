@@ -17,28 +17,39 @@ export default Vue.component('ChatHomePage', {
       imgUrls: ['src/assets/img/lunbo3.jpeg', 'src/assets/img/lunbo2.jpeg', 'src/assets/img/lunbo3.jpeg', 'src/assets/img/lunbo4.jpg'],
       rooms: 3,
       currentDate: moment(new Date()).format('MM-DD hh:mm'),
-
       // 弹窗
-      formLabelWidth: '120px',
+      formLabelWidth: '100px',
       dialogFormVisible: false,
+      createTitle:"创建者："+this.name,
       form: {
-        name: '',
-        region: '',
-        date1: '',
-        date2: '',
-        delivery: false,
-        type: [],
-        resource: '',
-        desc: ''
+        radio:"8人",
       },
-　　 }
+    　}
   },
   methods: {
+    //form初始化
+    onInit ()
+    {
+      let me = this
+         me.dialogFormVisible = false
+         me.form = {
+            radio: "8人",
+            name: '',
+            region: '',
+            date1: '',
+            date2: '',
+            delivery: false,
+            type: [],
+            resource: '',
+            desc: ''
+          }
+          
+    },
     // 创建房间按钮
     onCreate () { 
-      // 入口 
-      let me = this
-      this.dialogFormVisible = true
+      // 入口
+      let me =this
+      this.dialogFormVisible = !this.dialogFormVisible
     },
     // 设置按钮
     onSet () {
@@ -61,9 +72,17 @@ export default Vue.component('ChatHomePage', {
           });       
         });
     },
+    /**
+     * 提交创建房间
+     */
+    onCreateSubmit () {
+      let me = this
+      me.onInit()
+    }
   },
   created () {
     let me = this
+
   },
   template: tpl
 })
