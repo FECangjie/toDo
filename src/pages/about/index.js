@@ -22,6 +22,21 @@ export default Vue.component('IndexPage', {
   },
   created () {
     let me = this
+    fetch("/data.json").then(function(res) {
+  // res instanceof Response == true.
+  if (res.ok) {
+    res.json().then(function(data) {
+      console.log(data.entries);
+        });
+    } else {
+      console.log("Looks like the response wasn't perfect, got status", res.status);
+    }
+  }, function(e) {
+    console.log("Fetch failed!", e);
+  })
+
+
+    
     $http.get('api/linkApp/index.json').then(
       (res) => {
         me.isLoading = false

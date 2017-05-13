@@ -17,7 +17,7 @@ export default Vue.component('LoginPage', {
       state3: '',
       btuText: '进入',
       loading: false,
-      
+      tuijianNames: []
     }
   },
   
@@ -36,13 +36,7 @@ export default Vue.component('LoginPage', {
         };
       },
       loadAll() {
-        return [
-          { "value": "金日天", "address": "" },
-          { "value": "屌爆了", "address": "" },
-          { "value": "大炮来袭", "address": "" },
-          { "value": "逼逼侠", "address": "" },
-          { "value": "栓子", "address": "" },
-        ];
+        return this.tuijianNames
       },
 
       handleSelect(item) {
@@ -77,7 +71,24 @@ export default Vue.component('LoginPage', {
     },
     created () {
     let me = this
-
+    fetch("login/tuijianName.json", {
+      method: "post",
+      body: {
+        houseCode: 1,
+        comment: 1
+      },
+      formData: true
+    }).then(function(res) {
+      if (res.ok) {
+        res.json().then(function(data) {
+          // me.name = data.data.name[0].value
+          })
+        } else {
+          console.log("Looks like the response wasn't perfect, got status", res.status);
+        }
+      }, function(e) {
+        console.log("Fetch failed!", e);
+      })
   },
   template: tpl
 })

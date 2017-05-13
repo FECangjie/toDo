@@ -1,6 +1,6 @@
 /**
  * @file: mock 数据
- * @author: wangshiying@lianjia.com
+ * @author: qinchao@lianjia.com
  */
 var httpProxy = require('http-proxy')
 

@@ -27,36 +27,26 @@ module.exports = {
   ]
  },
     resolve: {
-        //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
         extensions: ['.js', '.json', '.less'],
-        //模块别名定义，方便后续直接引用别名，无须多写长长的地址
         alias: {
-            img: 'src/assets/img',
+            'vue': 'vue/dist/vue.js', // 用 webpack 的别名功能把 vue/dist/vue.js 命名成了 vue，不然vue 的 package.json 中的 main 指向的是 dist/vue.common.js。
+            common: path.resolve(__dirname, './src/common'),
             'vue$': 'vue/dist/vue.esm.js'
         }
     },
-    devServer: {//webpack-dev-server配置
+    devServer: { // webpack-dev-server配置
         historyApiFallback: true,//不跳转
         noInfo: true,
-        inline: true//实时刷新
+        inline: true //实时刷新
     },
     performance: {
         hints: false
     },
-    // plugins: [
-    // //压缩打包的文件
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     //supresses warnings, usually from module minification
-    //     warnings: false
-    //   }
-    // })],
     devtool: '#eval-source-map'
   }
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') { // 生产环境
     module.exports.devtool = '#source-map'
-    // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
