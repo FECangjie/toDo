@@ -41,7 +41,7 @@ export default Vue.component('ChatHomePage', {
       this.dialogFormVisible = true
     },
     // 设置按钮
-    onSet () {
+    onSet (1) {
 
     },
     // 反馈按钮
