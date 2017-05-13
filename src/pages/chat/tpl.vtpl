@@ -1,4 +1,5 @@
 <div>
   <Com-chat-header></Com-chat-header>
-  <ChatHomePage v-bind:name="name"></ChatHomePage>
+  <ChatHomePage v-if="switchRoom" v-bind:name="name" ></ChatHomePage>
+   <ChatRoomPage v-bind:name="name" ></ChatRoomPage>
 </div>

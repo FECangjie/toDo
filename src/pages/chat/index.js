@@ -1,22 +1,25 @@
 /**
  * @file: 聊天室
- * @author: qinchao@lianjia.com
+ * @author: qinchaolianjia.com
  */
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
-import comHeader from '../../components/chatHeader';
+import comHeader from '../../components/chatHeader'
 import ChatHome from './home'
+import ChatRoom from './room'
 import Url from '../../common/url.js'
 
 export default Vue.component('ChatPage', {
   props: [],
 
   data () {
+
     return {
       isLoading: true,
       errorTip: '',
-      name: decodeURI(Url.query('name'))
+      name: decodeURI(Url.query('name')),
+      switchRoom: false//v-if绑定
     }
   },
   created () {
