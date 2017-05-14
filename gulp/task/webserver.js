@@ -24,12 +24,12 @@ gulp.task('webserver', function() {
   // vmApp.use(vm)
   staticServer.use(api)
 
-  staticServer.listen(8080, 
+  staticServer.listen(8086,
     function(err, result) {
     if (err) {
       console.log(err);
     }
-    console.log('apiServer在8080端口启动！');
+    console.log('apiServer在8086端口启动！');
   })
 
   // 静态资源server
