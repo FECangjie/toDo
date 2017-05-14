@@ -16,36 +16,22 @@ export default Vue.component('ChatPage', {
   data () {
 
     return {
-      isLoading: true,
-      errorTip: '',
       name: decodeURI(Url.query('name')),
-      switchRoom: false//v-if绑定
+      pageType: 'home',
+    }
+  },
+  methods: {
+    /**
+     * 选择加载页面
+     */
+    setPageType (type) {
+      let me = this
+      me.pageType = type || 'home'
     }
   },
   created () {
     let me = this
 
-
-    /** ajax例子
-    $http.get('api/linkApp/index.json').then(
-      (res) => {
-        me.isLoading = false
-        let data = res.data
-        if (data && data.code) {
-          me.errorTip = ''
-          me.lastContactedNum = data.data.lastContactedNum
-          me.ownerCompletedRate = data.data.ownerCompletedRate
-          me.ownerConfirmedRate = data.data.ownerConfirmedRate
-          me.collectedNum = data.data.collectedNum
-          me.relatedRegionList = data.data.relatedRegionList
-        } else {
-          me.errorTip = data.msg || '数据获取失败'
-        }
-      },
-      (res) => {
-        me.isLoading = false
-      }
-    ) **/
   },
   template: tpl
 })

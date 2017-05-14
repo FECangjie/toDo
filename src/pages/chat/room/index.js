@@ -14,13 +14,14 @@ export default Vue.component('ChatRoomPage',{
         formLabelWidth: '100px',
         labelPosition: 'left',
         formLabelAlign: {
+            room: '',
             name: '你妈嗨',
         }
     }
 },
     method:{
         onSubmit () {
-            
+
         },
     },
     created () {

@@ -1,5 +1,6 @@
 <div>
   <Com-chat-header></Com-chat-header>
-  <ChatHomePage v-if="switchRoom" v-bind:name="name" ></ChatHomePage>
-   <ChatRoomPage v-bind:name="name" ></ChatRoomPage>
+  <ChatHomePage v-if="pageType==='home'" :name="name" :pageType="pageType"></ChatHomePage>
+  <ChatRoomPage v-if="pageType==='room'" :name="name" :pageType="pageType"></ChatRoomPage>
+   <!-- <ChatRoomPage v-bind:name="name" ></ChatRoomPage> -->
 </div>

@@ -11,8 +11,9 @@
         <el-button type="info" class="button" >离开房间</el-button>
       </span>
     </div>
-    <el-form :rules="rules" :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+    <el-form class="form" :rules="rules" :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
       <el-form-item>
+        <h3>房间创建成功！</h3>
         <el-input style="width:80%" v-model="formLabelAlign.name" placeholder="请输入内容"></el-input>
         <el-button type="info" class="button" @click="onSubmit">确定</el-button>
       </el-form-item>
