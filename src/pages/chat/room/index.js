@@ -8,6 +8,7 @@ export default Vue.component('ChatRoomPage',{
     return {
         isLoading: true,
         errorTip: '',
+        index:0,
         imgUrl: 'src/assets/img/od.jpeg',
         imgUrls: ['src/assets/img/lunbo3.jpeg', 'src/assets/img/lunbo2.jpeg', 'src/assets/img/lunbo3.jpeg', 'src/assets/img/lunbo4.jpg'],
         currentDate: moment(new Date()).format('MM-DD hh:mm'),
@@ -18,13 +19,12 @@ export default Vue.component('ChatRoomPage',{
             name: ''
         },
         sites: [
-            'Do ',
-            'You',
-            'Love'
+            '加入了房间 ',
+
         ]
     }
 },
-    method:{
+    methods:{
         onSubmit () {
             this.sites.push(this.formLabelAlign.name)
             this.formLabelAlign.name = ''
