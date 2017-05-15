@@ -15,14 +15,20 @@ export default Vue.component('ChatRoomPage',{
         labelPosition: 'left',
         formLabelAlign: {
             room: '',
-            name: '你妈嗨',
-        }
+            name: ''
+        },
+        sites: [
+            'Do ',
+            'You',
+            'Love'
+        ]
     }
 },
     method:{
         onSubmit () {
-
-        },
+            this.sites.push(this.formLabelAlign.name)
+            this.formLabelAlign.name = ''
+        }
     },
     created () {
         let me = this
