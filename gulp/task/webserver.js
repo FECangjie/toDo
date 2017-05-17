@@ -3,34 +3,41 @@
  * 主要功能：
  * 1. 同步接口和异步接口的mock
  */
-var gulp = require('gulp')
+var http = require('http')
+var path = require('path')
 var express = require('express')
 var Webpack = require('webpack')
+var gulp = require('gulp')
 var WebpackDevServer = require('webpack-dev-server')
-var pageConf = require('./../../webpack.config.js')
-
+var config = require('./../../webpack.config.js')
 var api = require('./../../middleware/mock')
-// var vm = require('./../../middleware/vm')
-var proxy = require('./../../middleware/proxy')
-var child_process = require('child_process')
+
 
 gulp.task('webserver', function() {
 
-  var config = require('./../../webpack.config.js')
+  var webApp = new WebpackDevServer(Webpack(config))
+  var app = webApp.app
+  app.use(api)
 
-  var staticServer = new WebpackDevServer(Webpack(config), obj)
-
-  // var vmApp = express()
-  // vmApp.use(vm)
-  staticServer.use(api)
-
-  staticServer.listen(8080, 
-    function(err, result) {
-    if (err) {
-      console.log(err);
-    }
-    console.log('apiServer在8080端口启动！');
+  //Express框架的路由访问控制文件server.js，增加路由配置。
+  app.use(function (req, res) {
+    res.sendfile('index.html')
+    //
+    // if (req.path.indexOf('/chat')>=0) {
+    //   res.sendfile('index.html')
+    // } else {
+    //   res.send("这里返回的都是server端处理的路由")
+    // }
   })
+
+  app.listen(8086,
+    function(err, result) {
+      if (err) {
+        console.log(err)
+      }
+      console.log('在8086端口启动')
+    }
+  )
 
   // 静态资源server
   var obj = {
