@@ -47,7 +47,7 @@ export default Vue.component('ChatHomePage', {
     // 创建房间按钮
     onCreate () {
       // 入口
-      let me =this
+      let me = this
       this.dialogFormVisible = !this.dialogFormVisible
     },
     // 设置按钮

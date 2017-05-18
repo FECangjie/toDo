@@ -28,6 +28,25 @@ export default Vue.component('ChatRoomPage',{
         onSubmit () {
             this.sites.push(this.formLabelAlign.name)
             this.formLabelAlign.name = ''
+        },
+        /**
+         * 离开房间
+         */
+        onLive () {
+          let me = this
+          this.$confirm('此操作将推出退出该房间, 是否继续?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            me.$parent.setPageType('home')
+            this.$message({
+              type: 'success',
+              message: '退出房间!'
+            })
+          }).catch(() => {
+
+          })
         }
     },
     created () {

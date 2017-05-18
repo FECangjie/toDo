@@ -5,16 +5,13 @@
       <div style="padding: 40px;">
       <img class="login-img" v-bind:src="imgUrl">
       <!-- <img src="~examples/assets/images/hamburger.png" class="image"> -->
-        <el-autocomplete
-    		  popper-class="my-autocomplete"
-    		  v-model="state3"
-    		  :fetch-suggestions="querySearch"
-    		  placeholder="昵称"
-    		  @select="handleSelect"
-    		  @change="handleSelect"
-    		  icon="edit"
-    		  :on-icon-click="handleIconClick"
-    		></el-autocomplete>
+      <el-input
+        placeholder="昵称(点击右侧图标可生成随机昵称)"
+        popper-class="my-autocomplete"
+        icon="search"
+        v-model="name"
+        :on-icon-click="handleIconClick">
+      </el-input>
         <div class="bottom clearfix">
         </div>
       </div>
@@ -28,5 +25,5 @@
   </el-col>
   </el-row>
 
- 
+
 </div>
