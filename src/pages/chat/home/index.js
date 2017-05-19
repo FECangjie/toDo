@@ -23,7 +23,11 @@ export default Vue.component('ChatHomePage', {
       createTitle:"创建者："+this.name,
       form: {
         radio:"8人",
-      }
+      },
+      // 音乐
+      musicNum: 0,
+      musicUrl: 'src/assets/music/wwhm.mp3',
+      musicUrls: ['src/assets/music/yh.mp3','src/assets/music/wwhm.mp3','src/assets/music/kn.mp3','src/assets/music/oceansDeep.mp3']
     　}
   },
   methods: {
@@ -43,6 +47,14 @@ export default Vue.component('ChatHomePage', {
             resource: '',
             desc: ''
           }
+    },
+    onMusic () {
+      this.musicNum += 1
+      this.musicUrl = this.musicUrls[this.musicNum % 4]
+      this.$message({
+        type: 'success',
+        message: '已切换下一首歌曲'
+      });
     },
     // 创建房间按钮
     onCreate () {
