@@ -7,6 +7,7 @@ import chatPage from './pages/chat'
 import aboutPage from './pages/about'
 import errorPage from './pages/error'
 import loginPage from './pages/login'
+import testPage from './pages/test'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -38,6 +39,10 @@ export const router = new VueRouter({
         {
             path:'/error',
             component: errorPage
+        },
+        {
+            path:'/test',
+            component: testPage
         }
   ]
 })

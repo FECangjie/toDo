@@ -39,7 +39,7 @@ export default Vue.component('ChatRoomPage',{
             cancelButtonText: '取消',
             type: 'warning'
           }).then(() => {
-            me.$parent.setPageType('home')
+            me.$emit('setPageType','home')
             this.$message({
               type: 'success',
               message: '退出房间!'

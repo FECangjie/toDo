@@ -24,13 +24,15 @@ export default Vue.component('ChatPage', {
     /**
      * 选择加载页面
      */
-    setPageType (type) {
+    pageType (type) {
+      debugger
       let me = this
       me.pageType = type || 'home'
     }
   },
   created () {
     let me = this
+    this.$emit('test')
 
   },
   template: tpl

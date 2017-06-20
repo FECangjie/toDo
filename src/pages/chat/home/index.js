@@ -88,7 +88,7 @@ export default Vue.component('ChatHomePage', {
     onCreateSubmit () {
       let me = this
       me.onInit()
-      me.$parent.setPageType('room')
+      me.$emit('setPageType')
       // me.&emit('pageType','room')
     }
   },

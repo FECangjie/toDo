@@ -11,7 +11,7 @@ export default Vue.component('LoginPage', {
   data () {
     return {
       name: '',
-      imgUrl: 'src/assets/img/od.jpeg',
+      imgUrl: 'src/assets/img/lunbo1.png',
       currentDate: moment(new Date()).format('YYYY-MM-DD'),
       restaurants: [
         { "value": "不一样的", "name": "程鸡鸡" },
@@ -105,10 +105,8 @@ export default Vue.component('LoginPage', {
       )
     },
     beforeUpdate: function () {
-      console.log(this.tuijianNames);
     },
     updated: function () {
-      console.log(this.tuijianNames);
     },
     created () {
 
