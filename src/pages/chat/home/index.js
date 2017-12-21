@@ -43,17 +43,16 @@ export default Vue.component('ChatHomePage', {
             resource: '',
             desc: ''
           }
-          
+
     },
     // 创建房间按钮
-    onCreate () { 
+    onCreate () {
       // 入口
       let me =this
       this.dialogFormVisible = !this.dialogFormVisible
     },
     // 设置按钮
     onSet () {
-
     },
     // 反馈按钮
     onSuggest () {
@@ -69,7 +68,7 @@ export default Vue.component('ChatHomePage', {
           this.$message({
             type: 'info',
             message: '取消输入（大胆说出你的想法嘛）'
-          });       
+          });
         });
     },
     /**

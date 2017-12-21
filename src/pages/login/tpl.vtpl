@@ -1,32 +1,3 @@
 <div class="login">
-<el-row type="flex" justify="center" class="login-wrap">
-  <el-col :span="8">
-    <el-card :body-style="{ padding: '0px' }">
-      <div style="padding: 40px;">
-      <img class="login-img" v-bind:src="imgUrl">
-      <!-- <img src="~examples/assets/images/hamburger.png" class="image"> -->
-        <el-autocomplete
-    		  popper-class="my-autocomplete"
-    		  v-model="state3"
-    		  :fetch-suggestions="querySearch"
-    		  placeholder="昵称"
-    		  @select="handleSelect"
-    		  @change="handleSelect"
-    		  icon="edit"
-    		  :on-icon-click="handleIconClick"
-    		></el-autocomplete>
-        <div class="bottom clearfix">
-        </div>
-      </div>
-    </el-card>
-  </el-col>
-</el-row>
-<el-row type="flex" justify="center" align="middle" class="login-wrap">
-
-<el-col :span="8" class="col-button">
-          <el-button type="primary" class="button" @click="login" :loading="loading">{{btuText}}</el-button>
-  </el-col>
-  </el-row>
-
- 
+  <div class="title" @click="goPath">Hi {{ name }}</div>
 </div>

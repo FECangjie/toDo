@@ -4,10 +4,9 @@
  */
 import Vue from 'vue'
 import tpl from './tpl.vtpl'
-// import comHeader from '../components/header';
 import './style.less'
 
-export default Vue.component('IndexPage', {
+export default Vue.component('app', {
   data () {
     return {
       activeIndex: '1',
