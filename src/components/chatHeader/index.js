@@ -7,7 +7,7 @@ import tpl from './tpl.vtpl'
 import './style.less'
 const prefix = 'com-chat-header'
 
-export default Vue.component('Com-chat-header', {
+export default Vue.component('com-chat-header', {
   data () {
     return {
       activeIndex: '1',
@@ -20,7 +20,7 @@ export default Vue.component('Com-chat-header', {
      }
    },
   created () {
-    
+
   },
   template: tpl
 })

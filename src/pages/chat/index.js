@@ -5,7 +5,7 @@
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
-import comHeader from '../../components/chatHeader'
+import '../../components/chatHeader'
 import ChatHome from './home'
 import ChatRoom from './room'
 import Url from '../../common/url.js'
@@ -14,7 +14,6 @@ export default Vue.component('ChatPage', {
   props: [],
 
   data () {
-
     return {
       name: decodeURI(Url.query('name')),
       pageType: 'home',
@@ -24,7 +23,7 @@ export default Vue.component('ChatPage', {
     /**
      * 选择加载页面
      */
-    pageType (type) {
+    changePageType (type) {
       debugger
       let me = this
       me.pageType = type || 'home'

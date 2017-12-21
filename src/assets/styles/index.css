@@ -1,12 +1,4 @@
-.red-tooltip {
-    	color: #FF4949 !important;
-    	border-color: #FF4949 !important;
-    	.popper__arrow {
-	    	color: #FF4949 !important;
-    		border-color: #FF4949 !important;
-    	}
-    	div {
-
-    	}
-
-    }
+body {
+  font-family: "helvetica neue",arial,sans-serif;
+  font-size: 14px;
+}

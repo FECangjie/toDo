@@ -6,7 +6,7 @@ import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
 
-export default Vue.component('ChatHomePage', {
+export default Vue.component('chat-home-page', {
     props: ['name', 'pageType'],
   data () {
     return {
@@ -26,8 +26,8 @@ export default Vue.component('ChatHomePage', {
       },
       // 音乐
       musicNum: 0,
-      musicUrl: 'src/assets/music/wwhm.mp3',
-      musicUrls: ['src/assets/music/yh.mp3','src/assets/music/wwhm.mp3','src/assets/music/kn.mp3','src/assets/music/oceansDeep.mp3']
+      musicUrl: 'src/assets/music/yh.mp3',
+      musicUrls: ['src/assets/music/oceansDeep.mp3','src/assets/music/kn.mp3','src/assets/music/yh.mp3']
     　}
   },
   methods: {
@@ -35,18 +35,18 @@ export default Vue.component('ChatHomePage', {
     onInit ()
     {
       let me = this
-         me.dialogFormVisible = false
-         me.form = {
-            radio: "8人",
-            name: '',
-            region: '',
-            date1: '',
-            date2: '',
-            delivery: false,
-            type: [],
-            resource: '',
-            desc: ''
-          }
+      me.dialogFormVisible = false
+      me.form = {
+        radio: "8人",
+        name: '',
+        region: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: ''
+      }
     },
     onMusic () {
       this.musicNum += 1
@@ -88,8 +88,7 @@ export default Vue.component('ChatHomePage', {
     onCreateSubmit () {
       let me = this
       me.onInit()
-      me.$emit('setPageType')
-      // me.&emit('pageType','room')
+      me.$emit('setPageType', 'room') // 改变父组件类型
     }
   },
   created () {

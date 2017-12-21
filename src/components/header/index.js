@@ -3,7 +3,7 @@
  * @author: qinchao@lianjia.com
  */
 import Vue from 'vue'
-import tpl from './tpl.vtpl'
+import tpl from './header.vue'
 import './style.less'
 const prefix = 'com-header'
 
@@ -20,7 +20,7 @@ export default Vue.component('Com-header', {
      }
    },
   created () {
-    
+
   },
   template: tpl
 })

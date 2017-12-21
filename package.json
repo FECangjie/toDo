@@ -1,20 +1,22 @@
 {
-  "name": "to-do",
+  "name": "7nxo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --hot --watch --inline --port 8086",
-    "build": "NODE_ENV=production webpack",
-    "dev": "node_modules/gulp/bin/gulp.js"
-  },
-  "author": "qinchao@lianjia.com",
+  "description": "7nxo",
+  "author": "cangjie",
   "license": "ISC",
+  "scripts": {
+    "node": "cross-env ENV=DEV node server.js",
+    "open": "cross-env ENV=DEV webpack-dev-server --config wp.config.js --inline --hot --quiet --progress --content-base pages/ --host 127.0.0.1 --port 8080 --open ",
+    "build": "cross-env ENV=PROD CDN='/dist/' webpack --config wp.config.js",
+    "start": "npm run node"
+  },
   "dependencies": {
-    "element-ui": "^1.3.2",
-    "vue": "^2.2.6"
+    "element-ui": "^2.0.8",
+    "vue": "^2.5.9",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "css-loader": "^0.28.7",
     "autoprefixer": "^6.7.7",
     "autoprefixer-loader": "^3.2.0",
     "axios": "^0.16.1",
@@ -23,10 +25,10 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^3.2.3",
-    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^0.10.1",
-    "gulp": "~3.9.1",
-    "gulp-replace-assets": "~0.0.4",
+    "html-webpack-harddisk-plugin": "^0.1.0",
+    "html-webpack-plugin": "~2.22.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
     "loader-utils": "^1.1.0",
