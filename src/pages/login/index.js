@@ -5,7 +5,6 @@
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
-// import xbAutocomplete from '../../components/autocomplete';
 
 export default Vue.component('LoginPage', {
   data () {
@@ -19,12 +18,13 @@ export default Vue.component('LoginPage', {
 
   methods: {
     goPath () {
+
     },
   },
   mounted() {
     let me = this
     $http.get('/api/login.json', {
-      params: { user: 'xbb'}
+      params: { user: '7nxo'}
     }).then(
       (res) => {
         let result = res.data

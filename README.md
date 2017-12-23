@@ -4,15 +4,15 @@ __包含:__
 
 + [MVVM VueJs]
 + [构建工具 webpack]
-+ [样式 el Ui]
++ [样式 ele Ui]
 
 __how to work?__
 
 1. 安装 依赖 `npm install`
 
-2. webpack 打包构建   `webpack --display-error-details --watch`
+2. 本地启动   `npm start`
 
-3. npm 启动项目 `npm start`
+3. 构建 `npm build`
 
 
 __项目结构__
@@ -30,4 +30,4 @@ __项目结构__
 
 __config__
 
-？
+cp指令放到server上的东西，按需配置

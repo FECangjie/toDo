@@ -5,9 +5,8 @@
 import Vue from 'vue'
 import tpl from './header.vue'
 import './style.less'
-const prefix = 'com-header'
 
-export default Vue.component('Com-header', {
+export default Vue.component('header', {
   data () {
     return {
       activeIndex: '1',
@@ -21,6 +20,9 @@ export default Vue.component('Com-header', {
    },
   created () {
 
+  },
+  components: {
+    header
   },
   template: tpl
 })
