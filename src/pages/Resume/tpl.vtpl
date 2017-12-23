@@ -3,10 +3,10 @@
     <div class="header">
       <h3>Resume</h3>
       <div class="row">
-        <div class="col">姓名：</div>
-        <div class="col">学历：</div>
-        <div class="col">电话：</div>
-        <div class="col">邮箱：</div>
+        <div class="col">姓名：{{ getInfo.name }}</div>
+        <div class="col">学历：{{ getInfo.xueli }}</div>
+        <div class="col">电话：{{ getInfo.tel }}</div>
+        <div class="col">邮箱：{{ getInfo.email }}</div>
       </div>
 
     </div>
@@ -17,14 +17,14 @@
         </div>
         <div class="info">
           <div class="row">
-            <div class="col">年龄：</div>
-            <div class="col">工作年限：</div>
-            <div class="col">政治面貌：</div>
+            <div class="col">年龄：{{ getInfo.age }}</div>
+            <div class="col">工作年限：{{ getInfo.workYear }}</div>
+            <div class="col">政治面貌：{{ getInfo.zhengzhi }}</div>
           </div>
           <div class="row">
-            <div class="col">婚姻状况：</div>
-            <div class="col">现居住地：</div>
-            <div class="col">故乡：</div>
+            <div class="col">婚姻状况：{{ getInfo.marry }}</div>
+            <div class="col">现居住地：{{ getInfo.address }}</div>
+            <div class="col">故乡：{{ getInfo.hometown }}</div>
           </div>
         </div>
       </div>
@@ -46,9 +46,9 @@
         </div>
         <div class="info">
           <div class="row">
-            <div class="col">2016 - 至今</div>
-            <div class="col">链家网</div>
-            <div class="col">前端研发工程师</div>
+            <div class="col"><w>2016 - 至今</w></div>
+            <div class="col"><w>链家网</w></div>
+            <div class="col"><w>前端研发工程师</w></div>
           </div>
           <p>工作描述：负责链家网 平台内网／二手房业务线 相关项目的前端工作。</p>
           <p>项目经历：</p>
@@ -73,11 +73,10 @@
 
   <p><w>LINK App 如视H5</w>：链家网房源户型数据的重要采集渠道，实勘采集产品。PHP中间层 + zepto。</p>
 
-
-  <div class="row">
-    <div class="col">2015年8月 - 2016年8月</div>
-    <div class="col">易宝支付</div>
-    <div class="col">前端研发工程师</div>
+  <div class="row work">
+    <div class="col"><w>2015年8月 - 2016年8月</w></div>
+    <div class="col"><w>易宝支付</div>
+    <div class="col"><w>前端研发工程师</w></div>
   </div>
   <p>工作描述：负责易宝支付 支付+钱包 相关项目的前端工作。</p>
   <p>项目经历：</p>
@@ -114,6 +113,34 @@
 精通HTML+CSS网页布局与样式，了解HTML5与CSS3.0。</p>
 <p>
 有一定的项目动手能力，页面设计偏向于简约扁平化风格。</p>
+            </div>
+          </div>
+
+          <div class="chunk work">
+            <div class="left">
+              基础积累
+            </div>
+            <div class="right">
+              <p>大学积累了一定的计算机专业相关知识，了解c java 数据结构 计算机网络 数据库相关知识。免学费就读省重点初／高中。</p>
+              <p>
+在校期间有java培训经历，有初级后端语言基础。</p>
+<p>
+热爱技术，对新技术具有探索精神。</p>
+            </div>
+          </div>
+
+          <div class="chunk work">
+            <div class="left">
+              其  他
+            </div>
+            <div class="right">
+              <p>生活积极，待事激情 有责任心。</p>
+              <p>
+github：<a href="https://github.com/FECangjie" target="_blank">https://github.com/FECangjie</a></p>
+<p>
+blog：<a href="https://fecangjie.github.io/" target="_blank">https://fecangjie.github.io/</a></p>
+<p>
+个人网站：<a href="http://7nxo.leanapp.cn/" target="_blank">http://7nxo.leanapp.cn/</a></p>
             </div>
           </div>
         </div>
