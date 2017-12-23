@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 import sharePage from './pages/share'
 import homePage from './pages/home'
-import chatPage from './pages/chat'
+import Resume from './pages/Resume'
 import errorPage from './pages/error'
 import loginPage from './pages/login'
 import testPage from './pages/test'
@@ -25,8 +25,8 @@ export const router = new VueRouter({
             component: homePage
         },
         {
-            path:'/chat',
-            component: chatPage
+            path:'/resume',
+            component: Resume
         },
         {
             path:'/share',
