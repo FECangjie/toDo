@@ -7,6 +7,9 @@
   background-color="#545c64"
   text-color="#fff"
   active-text-color="#a0d2f0">
+    <router-link class="nav-item" to="/git"><el-menu-item index="5" class="nav-item-right">
+        github
+    </el-menu-item></router-link>
       <router-link class="nav-item" to="/blog"><el-menu-item index="5" class="nav-item-right">
           博客
       </el-menu-item></router-link>

@@ -1,0 +1,45 @@
+.work-page {
+  width: 1050px;
+  padding: 50px 0 0 0;
+  margin: 0 auto;
+  overflow: hidden;
+  .title {
+    h2 {
+      font-size: 32px;
+    }
+    margin-bottom: 30px;
+  }
+  .picture-wall{
+    float: left;
+    overflow: hidden;
+    width: 460px;
+    display: inline-block;
+    margin-right: 50px;
+    span{
+        line-height: 30px;
+    }
+  }
+  .picture {
+    width: 400px;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 50px;
+    background: rgb(255, 255, 255);
+    // box-shadow: 8px 8px 10px #868686;
+
+  }
+
+  .image {
+    width: 100%;
+    border: 5px solid #eee;
+    border-width: 0 5px 5px 0;
+    border-radius: 3px;
+  }
+  #tooltip {
+      z-index: 2000;
+      position:fixed;
+      box-shadow: 8px 8px 10px #868686;
+      border: 5px solid rgb(255, 255, 255);
+      border-radius: 3px;
+  }
+}

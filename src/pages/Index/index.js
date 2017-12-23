@@ -1,20 +1,21 @@
-/**
- * @file: 首页
- * @author: qinchao@lianjia.com
- */
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
+import Header from 'components/header';
 
-export default Vue.component('ErrorPage', {
+export default Vue.component('index', {
   data () {
     return {
       isLoading: true,
-      errorTip: '请在电脑端预览'
+      errorTip: '',
+      type: ''
     }
   },
   created () {
     let me = this
+  },
+  components: {
+    Header
   },
   template: tpl
 })

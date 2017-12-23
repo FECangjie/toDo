@@ -1,7 +1,0 @@
-<div class="error-page">
-  <i class="el-icon-warning"></i>
-  <div>{{ errorTip }}</div>
-  <form name="form" method="post" action="#">
-    <input type="button" name="test" @click="test" value="提交">
-</form>
-</div>
