@@ -1,6 +1,150 @@
 <div class="resume">
-  <div class="header">Resume</div>
-  <div class="content">
-    <img :src="imgUrl">
+  <div class="wrap">
+    <div class="header">
+      <h3>Resume</h3>
+      <div class="row">
+        <div class="col">姓名：{{ getInfo.name }}</div>
+        <div class="col">学历：{{ getInfo.xueli }}</div>
+        <div class="col">电话：{{ getInfo.tel }}</div>
+        <div class="col">邮箱：{{ getInfo.email }}</div>
+      </div>
+
+    </div>
+    <div class="content">
+      <div class="chunk">
+        <div class="label">
+          <span>基本信息</span>
+        </div>
+        <div class="info">
+          <div class="row">
+            <div class="col">年龄：{{ getInfo.age }}</div>
+            <div class="col">工作年限：{{ getInfo.workYear }}</div>
+            <div class="col">政治面貌：{{ getInfo.zhengzhi }}</div>
+          </div>
+          <div class="row">
+            <div class="col">婚姻状况：{{ getInfo.marry }}</div>
+            <div class="col">现居住地：{{ getInfo.address }}</div>
+            <div class="col">故乡：{{ getInfo.hometown }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="chunk">
+        <div class="label">
+          <span>教育经历</span>
+        </div>
+        <div class="info">
+          <div class="row">
+            <div class="col">吉林大学</div>
+            <div class="col">2011级本科</div>
+            <div class="col">计算机科学与技术</div>
+          </div>
+        </div>
+      </div>
+      <div class="chunk">
+        <div class="label">
+          <span>工作经历</span>
+        </div>
+        <div class="info">
+          <div class="row">
+            <div class="col w">2016 - 至今</div>
+            <div class="col w">链家网</div>
+            <div class="col w">前端研发工程师</div>
+          </div>
+          <p>工作描述：负责链家网 平台内网／二手房业务线 相关项目的前端工作。</p>
+          <p>项目经历：</p>
+          <p><span class="w">EHR 人事管理系统</span>：链家自研发人事管理系统，前端系统采用React框架，运用redux进行数据管理，完成组织部门管理／人员信息管理／黑白名单管理／入转调离／数据报表等人事管理模块。<br/>
+	职责：<br/>1 参与项目搭建——webpack打包，本地node中间层mock数据／代理api，模块化业务代码等，协助qa部署环境保证系统环境稳定。<br/>
+	2 参与所有业务模块的开发工作。<br/>
+	3 基于wp优化项目构建速度。<br/>
+	4 从人事系统中拆分 考勤／薪酬／社保 三个新项目。</p>
+
+  <p><span class="w">LINK 客源系统</span>：链家十六万经纪人的带客看房系统，采用链家前端团队研发的前端mvc框架，封装出多个组件，完成买卖／租赁／录客／带客／看房一系列流程的系统。
+	职责：1 完成客源解读／商机翻打／约带看模块的开发。
+	2 项目历时悠久，重构／迁移成本大，新业务的需求才用react开发。
+</p>
+
+<p><span class="w">LINK App 客源H5</span>：客源项目在native中的实现，采用链家前端团队出品的bucky中间层进行开发，目前完成商机翻打／IM抢单模块。
+	职责：从0到1，采用zepto + node中间层进行开发。
+</p>
+
+<p><span class="w">榴莲展位系统</span>：链家经纪人的房源推广／发布平台 分运营后台和展位两部分，react + mobox 。
+	职责：1 完成SPA项目搭建 协助后端搭建环境。
+	2 完成项目初期的业务实现，后交接给其他同学。</p>
+
+  <p><span class="w">LINK App 如视H5</span>：链家网房源户型数据的重要采集渠道，实勘采集产品。PHP中间层 + zepto。</p>
+
+  <div class="row work">
+    <div class="col"><span class="w">2015年8月 - 2016年8月</span></div>
+    <div class="col"><span class="w">易宝支付</span></div>
+    <div class="col"><span class="w">前端研发工程师</span></div>
+  </div>
+  <p>工作描述：负责易宝支付 支付+钱包 相关项目的前端工作。</p>
+  <p>项目经历：</p>
+  <p><span class="w">H5 支付钱包</span>：独立负责公司支付移动化的领头产品，app端依赖h5完成整个绑卡／支付／验密流程。
+	职责：1 采用zepto完成前端页面，gulp进行自动化构建子任务。
+	2 为商户提供代码规范、注释明确的js SDK。</p>
+
+  <p><span class="w">商户配置系统</span>：内部运营人员使用的商户配置平台。
+	职责：采用一款轻量级 类 bootstrap 框架完成前端页面开发，封装大量表单验证方法。</p>
+
+  <p><span class="w">小活动页面 官网维护。</span></p>
+  <p><span class="w">公司大会最佳新人奖。</span></p>
+        </div>
+
+      </div>
+
+
+      <div class="chunk">
+        <div class="label">
+          <span>个人总结</span>
+        </div>
+        <div class="info">
+          <div class="chunk">
+            <div class="left">
+              专业技能
+            </div>
+            <div class="right">
+              <p>掌握javascript语言。</p>
+              <p>
+规范开发pc端／移动端／mvvm的页面。</p>
+<p>
+熟练运用Photoshop、Atom、Chrome等常用网页制作软件，Jenkins、Charles、SourceTree等工作软件。</p>
+<p>
+精通HTML+CSS网页布局与样式，了解HTML5与CSS3.0。</p>
+<p>
+有一定的项目动手能力，页面设计偏向于简约扁平化风格。</p>
+            </div>
+          </div>
+
+          <div class="chunk work">
+            <div class="left">
+              基础积累
+            </div>
+            <div class="right">
+              <p>大学积累了一定的计算机专业相关知识，了解c java 数据结构 计算机网络 数据库相关知识。免学费就读省重点初／高中。</p>
+              <p>
+在校期间有java培训经历，有初级后端语言基础。</p>
+<p>
+热爱技术，对新技术具有探索精神。</p>
+            </div>
+          </div>
+
+          <div class="chunk work">
+            <div class="left">
+              其  他
+            </div>
+            <div class="right">
+              <p>生活积极，待事激情 有责任心。</p>
+              <p>
+github：<a href="https://github.com/FECangjie" target="_blank">https://github.com/FECangjie</a></p>
+<p>
+blog：<a href="https://fecangjie.github.io/" target="_blank">https://fecangjie.github.io/</a></p>
+<p>
+个人网站：<a href="http://7nxo.leanapp.cn/" target="_blank">http://7nxo.leanapp.cn/</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

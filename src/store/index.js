@@ -7,6 +7,8 @@ import AudioInfo from './modules/audio.js'
 import MenuList from './modules/menulist.js'
 import MusicList from './modules/musiclist.js'
 import Reconmmed from './modules/reconmmend.js'
+
+import Info from './modules/me.js'
 import { router } from '../router.js'
 
 Vue.use(Vuex)
@@ -127,6 +129,7 @@ const store = new Vuex.Store({
   },
 
   modules: {
+    Info,
     sideBar: Sidebar, // 轮播图
     audioInfo: AudioInfo, // 播放信息
     menuList: MenuList, // 列表

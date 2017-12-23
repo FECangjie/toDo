@@ -10,9 +10,7 @@ module.exports = function (req, res, next) {
   if (/.json/.test(req.originalUrl)) { // api数据
     console.log('接到mock-api：' + req.originalUrl + '的请求')
     var simplePath = req.originalUrl.split('?')[0].replace('.json', '')
-    var temp = simplePath
-    temp = temp.substr(4, temp.length)
-    var apiPath = rootPath + '/mock/' + temp + '.js'
+    var apiPath = rootPath + '/mock/' + simplePath + '.js'
     var api = require(apiPath)
     res.send(api(null, req.body || req.query))
   } else {

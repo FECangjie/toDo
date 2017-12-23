@@ -2,12 +2,12 @@
 import Vue from 'vue'
 
 import sharePage from './pages/share'
-import homePage from './pages/home'
+import Home from './pages/home'
 import Resume from './pages/Resume'
-import errorPage from './pages/error'
-import loginPage from './pages/login'
-import testPage from './pages/test'
 import workPage from './pages/work'
+import Blog from './pages/Resume'
+import Book from './pages/work'
+
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -18,32 +18,26 @@ export const router = new VueRouter({
   routes: [
   		{
           path:'/',
-          component: loginPage
+          redirect: '/home'
       },
       {
           path:'/home',
-          component: homePage,
+          component: Home,
           children: [{
                   path: '/resume',
                   component: Resume
 
+              },{
+                  path:'/work',
+                  component: workPage
+              },{
+                  path:'/blog',
+                  component: Blog
+              },{
+                  path:'/book',
+                  component: Book
               }
           ]
       },
-      {
-          path:'/share',
-          component: sharePage
-      },
-      {
-          path:'/error',
-          component: errorPage
-      },
-      {
-          path:'/test',
-          component: testPage
-      },{
-          path:'/work',
-          component: workPage
-      }
   ]
 })

@@ -1,5 +1,92 @@
 .resume {
-  color: rgb(90, 160, 190);
-  color: rgb(80, 120, 140);
-  color: rgb(160, 210, 240);
+  width: 100%;
+  height: 100%;
+  .wrap {
+    width: 800px;
+    margin: 50px auto;
+
+    .header {
+      width: 100%;
+      color: #fff;
+      background-color: #5aa0be;
+      text-align: left;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      h3 {
+        font-size: 32px;
+      }
+      .row {
+        width: 100%;
+        .col {
+          display: inline-block;
+          box-sizing: border-box;
+          width: 24.5%;
+        }
+      }
+    }
+
+    .content {
+      border-left: 1px solid #eee;
+      box-sizing: border-box;
+      .chunk {
+        .label {
+          border-bottom: 1px solid #eee;
+          color: #fff;
+          span {
+            display: inline-block;
+            padding: 5px 15px;
+            font-size: 24px;
+            background-color: rgb(80, 120, 140);
+          }
+        }
+        .info {
+          padding: 20px;
+          .row {
+            margin-bottom: 10px;
+            width: 100%;
+            .col {
+              display: inline-block;
+              box-sizing: border-box;
+              width: 32%;
+            }
+          }
+
+          .work {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+          }
+
+          p {
+            margin-bottom: 20px;
+          }
+        }
+
+        .left {
+          float: left;
+          width: 80px;
+          font-weight: 600;
+        }
+        .right {
+          width: 600px;
+          display: inline-block;
+          p {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .w {
+    font-weight: 600;
+    color: rgb(80, 120, 140);
+  }
+  a {
+    color: rgb(160, 210, 240);
+  }
+
+  // color: rgb(80, 120, 140);
+  // color: rgb(160, 210, 240);
 }
