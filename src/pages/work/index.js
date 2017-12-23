@@ -38,7 +38,10 @@ export default Vue.component('WorkPage', {
       pictureHouse2:[],
       pictureHouse3:[],
       pictureHouse4:[],
-      showBigPicture:false,
+      showTooltip:false,
+      tooltipPath:'',
+      tooltipX:'',
+      tooltipY:'',
     }
   },
   methods: {
@@ -57,8 +60,17 @@ export default Vue.component('WorkPage', {
       
     },
     mouseoverPicture(param){
-      console.log(param);
-      console.log(document.getElementById('bigImage'));
+      let e = window.event;
+
+      console.log(param.path[0].src);
+      this.showTooltip = true;
+      this.tooltipPath = param.path[0].src;
+      console.log(e.clientX+'   '+e.clientY);
+      this.tooltipX=e.clientX+20+'px';
+      this.tooltipY = e.clientY + 20 + 'px';
+    },
+    mouseoutPicture(param){
+      this.showTooltip = false;
     }
   },
   created () {
