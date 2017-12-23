@@ -1,0 +1,8 @@
+<div class="work-page">
+    <span>{{ message }}</span>
+    <div class="picture-wall">
+        <div v-for="item in pictureHouse" >
+            <img :src = 'item.picturePath' >
+        </div>
+    </div>
+</div>
