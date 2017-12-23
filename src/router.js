@@ -31,6 +31,9 @@ export const router = new VueRouter({
                   path:'/blog',
                   component: Blog
               },{
+                  path:'/git',
+                  component: Blog
+              },{
                   path:'/book',
                   component: Book
               },{
