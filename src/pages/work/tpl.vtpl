@@ -1,40 +1,13 @@
 <div class="work-page">
     <div v-show="showTooltip" :style="{'left':tooltipX,'top':tooltipY}" id="tooltip">
-        <img :src="tooltipPath" width="650px" id="tooltipImage">   
+        <img :src="tooltipPath" width="650px" id="tooltipImage">
     </div>
     <div class="picture-wall">
-        <div id="picture-wall1">
-            <div class="picture" v-for="item in pictureHouse1" >
-                <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
-                <div> 
-                    <span >{{item.title}}</span>
-                </div>
-            </div>
-        </div>
-        <div id="picture-wall2">
-            <div class="picture" v-for="item in pictureHouse2" >
-                <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
-                <div> 
-                    <span >{{item.title}}</span>
-                </div>
-            </div>
-        </div>
-        <div id="picture-wall3">
-            <div class="picture" v-for="item in pictureHouse3" >
-                <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
-                <div> 
-                    <span >{{item.title}}</span>
-                </div>
-            </div>
-        </div>
-        <div id="picture-wall4">
-            <div class="picture" v-for="item in pictureHouse4" >
-                <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture"> 
-                <div> 
-                    <span >{{item.title}}</span>
-                </div>
-            </div>
-        </div>
+      <div class="picture" v-for="item in pictureHouse" >
+          <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
+          <div>
+              <span >{{item.title}}</span>
+          </div>
+      </div>
     </div>
-    
 </div>
