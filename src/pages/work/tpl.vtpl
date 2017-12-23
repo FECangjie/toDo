@@ -2,7 +2,7 @@
     <div class="picture-wall">
         <div id="picture-wall1">
             <div class="picture" v-for="item in pictureHouse1" >
-                <img :src = 'item.picturePath' >
+                <img :src = 'item.picturePath' class="image" @mouseover="mouseoverPicture" @mouseout="mouseoutPicture">
                 <div> 
                     <span >{{item.title}}</span>
                 </div>
@@ -10,18 +10,30 @@
         </div>
         <div id="picture-wall2">
             <div class="picture" v-for="item in pictureHouse2" >
-                <img :src = 'item.picturePath' >
+                <img :src = 'item.picturePath' class="image" @mouseover="mouseoverPicture" @mouseout="mouseoutPicture">
+                <div> 
+                    <span >{{item.title}}</span>
+                </div>
             </div>
         </div>
         <div id="picture-wall3">
             <div class="picture" v-for="item in pictureHouse3" >
-                <img :src = 'item.picturePath' >
+                <img :src = 'item.picturePath' class="image" @mouseover="mouseoverPicture" @mouseout="mouseoutPicture">
+                <div> 
+                    <span >{{item.title}}</span>
+                </div>
             </div>
         </div>
         <div id="picture-wall4">
             <div class="picture" v-for="item in pictureHouse4" >
-                <img :src = 'item.picturePath' >
+                <img :src = 'item.picturePath' class="image" @mouseover="mouseoverPicture" @mouseout="mouseoutPicture"> 
+                <div> 
+                    <span >{{item.title}}</span>
+                </div>
             </div>
         </div>
+    </div>
+    <div v-show="showBigPicture"  id="bigPicture">
+        <img  width="650px" id="bigImage">   
     </div>
 </div>

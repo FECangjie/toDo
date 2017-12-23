@@ -38,7 +38,7 @@ export default Vue.component('WorkPage', {
       pictureHouse2:[],
       pictureHouse3:[],
       pictureHouse4:[],
-
+      showBigPicture:false,
     }
   },
   methods: {
@@ -55,6 +55,10 @@ export default Vue.component('WorkPage', {
         }
       }
       
+    },
+    mouseoverPicture(param){
+      console.log(param);
+      console.log(document.getElementById('bigImage'));
     }
   },
   created () {
