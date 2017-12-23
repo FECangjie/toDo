@@ -16,28 +16,30 @@ export const router = new VueRouter({
   base: __dirname,
   routes: [
   		{
-            path:'/',
-            component: loginPage
-        },
-        {
-            path:'/home',
-            component: homePage
-        },
-        {
-            path:'/resume',
-            component: Resume
-        },
-        {
-            path:'/share',
-            component: sharePage
-        },
-        {
-            path:'/error',
-            component: errorPage
-        },
-        {
-            path:'/test',
-            component: testPage
-        }
+          path:'/',
+          component: loginPage
+      },
+      {
+          path:'/home',
+          component: homePage,
+          children: [{
+                  path: '/resume',
+                  component: Resume
+
+              }
+          ]
+      },
+      {
+          path:'/share',
+          component: sharePage
+      },
+      {
+          path:'/error',
+          component: errorPage
+      },
+      {
+          path:'/test',
+          component: testPage
+      }
   ]
 })

@@ -4,7 +4,7 @@
           <router-link class="nav-item" to="/about">博客</router-link>
       </el-menu-item>
       <el-menu-item index="4" class="nav-item-right">
-          <router-link class="nav-item" to="/about">简历</router-link>
+          <router-link class="nav-item" to="/resume">简历</router-link>
       </el-menu-item>
       <el-menu-item index="3" class="nav-item-right">
           <router-link class="nav-item" to="/share">个人书架</router-link>

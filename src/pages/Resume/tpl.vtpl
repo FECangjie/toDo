@@ -1,3 +1,6 @@
-<div>
-  <Header ></Header>
+<div class="resume">
+  <div class="header">Resume</div>
+  <div class="content">
+    <img :src="imgUrl">
+  </div>
 </div>
