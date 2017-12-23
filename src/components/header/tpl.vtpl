@@ -1,19 +1,19 @@
 <div class="header">
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <el-menu-item index="5" class="nav-item-right">
-          <router-link class="nav-item" to="/about">博客</router-link>
+          <router-link class="nav-item" to="/blog">博客</router-link>
       </el-menu-item>
       <el-menu-item index="4" class="nav-item-right">
           <router-link class="nav-item" to="/resume">简历</router-link>
       </el-menu-item>
       <el-menu-item index="3" class="nav-item-right">
-          <router-link class="nav-item" to="/share">个人书架</router-link>
+          <router-link class="nav-item" to="/book">个人书架</router-link>
       </el-menu-item>
       <el-menu-item index="2" class="nav-item-right">
-          <router-link class="nav-item" to="/">我的工作</router-link>
+          <router-link class="nav-item" to="/work">我的工作</router-link>
       </el-menu-item>
         <el-menu-item index="1" class="nav-item-right">
-            <router-link class="nav-item" to="/">首页</router-link>
+            <router-link class="nav-item" to="/home">首页</router-link>
         </el-menu-item>
         <el-tooltip class="item" popper-class="" visible-arrow="false" effect="light" content="还没有logo，这当然不是" placement="right">
         <i class="el-icon-star-on logo" ></i>
