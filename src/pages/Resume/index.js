@@ -11,8 +11,6 @@ export default Vue.component('resume', {
   },
   created () {
     let me = this
-    debugger
-    console.log(1)
   },
   components: {
   },
