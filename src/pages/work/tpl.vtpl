@@ -6,7 +6,7 @@
       <h2>我的工作</h2>
     </div>
     <div class="picture-wall">
-      <div class="picture" v-for="item in pictureHouse" >
+      <div class="picture" v-for="(item, index) in pictureHouse" v-if="!(index%2)">
           <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
           <div>
               <span >{{item.title}}</span>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="picture-wall">
-      <div class="picture" v-for="item in pictureHouse" >
+      <div class="picture" v-for="(item, index) in pictureHouse" v-if="index%2">
           <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
           <div>
               <span >{{item.title}}</span>
