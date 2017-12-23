@@ -7,6 +7,7 @@ import Resume from './pages/Resume'
 import errorPage from './pages/error'
 import loginPage from './pages/login'
 import testPage from './pages/test'
+import workPage from './pages/work'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -40,6 +41,9 @@ export const router = new VueRouter({
       {
           path:'/test',
           component: testPage
+      },{
+          path:'/work',
+          component: workPage
       }
   ]
 })
