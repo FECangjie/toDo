@@ -1,20 +1,31 @@
 <div class="header">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="5" class="nav-item-right">
-          <router-link class="nav-item" to="/blog">博客</router-link>
-      </el-menu-item>
-      <el-menu-item index="4" class="nav-item-right">
-          <router-link class="nav-item" to="/resume">简历</router-link>
-      </el-menu-item>
+  <el-menu
+  :default-active="activeIndex"
+  class="el-menu-demo"
+  mode="horizontal"
+  @select="handleSelect"
+  background-color="#545c64"
+  text-color="#fff"
+  active-text-color="#a0d2f0">
+      <router-link class="nav-item" to="/blog"><el-menu-item index="5" class="nav-item-right">
+          博客
+      </el-menu-item></router-link>
+      <router-link class="nav-item" to="/resume">
+        <el-menu-item index="4" class="nav-item-right">简历</el-menu-item></router-link>
+          <router-link class="nav-item" to="/book">
       <el-menu-item index="3" class="nav-item-right">
-          <router-link class="nav-item" to="/book">个人书架</router-link>
-      </el-menu-item>
+        个人书架
+      </el-menu-item></router-link>
+        <router-link class="nav-item" to="/work">
       <el-menu-item index="2" class="nav-item-right">
-          <router-link class="nav-item" to="/work">我的工作</router-link>
+        我的工作
       </el-menu-item>
+      </router-link>
+      <router-link class="nav-item" to="/home">
         <el-menu-item index="1" class="nav-item-right">
-            <router-link class="nav-item" to="/home">首页</router-link>
+            首页
         </el-menu-item>
+        </router-link>
         <el-tooltip class="item" popper-class="" visible-arrow="false" effect="light" content="还没有logo，这当然不是" placement="right">
         <i class="el-icon-star-on logo" ></i>
     </el-tooltip>

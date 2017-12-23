@@ -2,7 +2,7 @@
 import Vue from 'vue'
 
 import sharePage from './pages/share'
-import homePage from './pages/home'
+import Home from './pages/home'
 import Resume from './pages/Resume'
 import workPage from './pages/work'
 import Blog from './pages/Resume'
@@ -18,11 +18,11 @@ export const router = new VueRouter({
   routes: [
   		{
           path:'/',
-          component: loginPage
+          redirect: '/home'
       },
       {
           path:'/home',
-          component: homePage,
+          component: Home,
           children: [{
                   path: '/resume',
                   component: Resume
