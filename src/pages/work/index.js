@@ -7,10 +7,10 @@ export default Vue.component('WorkPage', {
   data () {
     return {
       pictureHouse:[
-        {picturePath:'src/assets/img/work/1.png',title:'p1'},
-        {picturePath:'src/assets/img/work/2.png',title:'p1'},
-        {picturePath:'src/assets/img/work/3.png',title:'p1'},
-        {picturePath:'src/assets/img/work/4.png',title:'p1'},
+        {picturePath:'src/assets/img/work/1.png',title:'LINK HR人事管理系统'},
+        {picturePath:'src/assets/img/work/2.png',title:'LINK 客源带看系统'},
+        {picturePath:'src/assets/img/work/3.png',title:'经纪人展位报买平台'},
+        {picturePath:'src/assets/img/work/4.png',title:'LINK 客源商机H5应用'},
       ],
       pictureHouse1:[],
       pictureHouse2:[],

@@ -2,6 +2,17 @@
     <div v-show="showTooltip" :style="{'left':tooltipX,'top':tooltipY}" id="tooltip">
         <img :src="tooltipPath" width="650px" id="tooltipImage">
     </div>
+    <div class="title">
+      <h2>我的工作</h2>
+    </div>
+    <div class="picture-wall">
+      <div class="picture" v-for="item in pictureHouse" >
+          <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
+          <div>
+              <span >{{item.title}}</span>
+          </div>
+      </div>
+    </div>
     <div class="picture-wall">
       <div class="picture" v-for="item in pictureHouse" >
           <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
