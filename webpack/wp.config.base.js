@@ -31,6 +31,7 @@ module.exports = {
 			assets: path.resolve(ROOT, './src/assets'),
 			components: path.resolve(ROOT, './src/components'),
 			'store': path.resolve(ROOT, './src/store'),
+			'router': path.resolve(ROOT, './src/router'),
 			'pages': path.resolve(ROOT, './src/pages'),
 			'vue$': 'vue/dist/vue.esm.js'
 		}

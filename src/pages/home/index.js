@@ -1,11 +1,7 @@
-/**
- * @file: 首页
- * @author: qinchao@lianjia.com
- */
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
-import header from 'components/header';
+import Header from 'components/header';
 
 export default Vue.component('home', {
   data () {
@@ -19,7 +15,7 @@ export default Vue.component('home', {
     let me = this
   },
   components: {
-    header
+    Header
   },
   template: tpl
 })

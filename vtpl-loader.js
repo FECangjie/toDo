@@ -1,7 +1,3 @@
-/**
- * @file: vtpl loader
- * @author: wangshiying@lianjia.com
- */
 module.exports = function (context) {
   context = context.replace(/\'/g, '\\\'')
   context = context.replace(/\n/g, '\\n')

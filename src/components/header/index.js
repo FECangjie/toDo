@@ -1,9 +1,5 @@
-/**
- * @file: nav
- * @author: qinchao@lianjia.com
- */
 import Vue from 'vue'
-import tpl from './header.vue'
+import tpl from './tpl.vtpl'
 import './style.less'
 
 export default Vue.component('header', {
@@ -21,8 +17,6 @@ export default Vue.component('header', {
   created () {
 
   },
-  components: {
-    header
-  },
+
   template: tpl
 })

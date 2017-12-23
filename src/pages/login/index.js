@@ -1,10 +1,7 @@
-/**
- * @file: 首页
- * @author: qinchao@lianjia.com
- */
 import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
+import { router } from 'router'
 
 export default Vue.component('LoginPage', {
   data () {
@@ -18,7 +15,8 @@ export default Vue.component('LoginPage', {
 
   methods: {
     goPath () {
-
+      debugger
+      router.push('/home')
     },
   },
   mounted() {
