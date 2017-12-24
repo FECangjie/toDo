@@ -32,8 +32,8 @@ export default Vue.component('tag', {
      mouseout(e){
       e.target.style.boxShadow = "";
      },
-     tagsClick(item){
-       this.$store.dispatch('get_Me_Info_Tags', {})
+     tagsClick(item, index){
+       this.$store.dispatch('get_Me_Info_Tags', {id: item.id, index: index})
      }
    },
   created () {

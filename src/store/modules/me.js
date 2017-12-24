@@ -37,21 +37,11 @@ const Me = {
 	actions: {
 		set_Info ({ commit }, obj) {
 			$http.get(infoAPI, {}).then((res) => { // 播放信息
+				console.log(res)
 				let data = res.data && res.data.data
         store.commit({
           type: 'setInfo',
-          payload: {
-		  			name: '秦超',
-		  			xueli: '本科985',
-		  			tel: '131-2156-1943',
-		  			email: 'qinchao7n@qq.com',
-		        age: '25',
-		        workYear: '2-3',
-		        zhengzhi: '中共党员',
-		        marry: '未婚',
-		        address: '北京',
-		        hometown: '吉林长春',
-		  		}
+          payload: data.info
         })
 
       }, (err) => {
@@ -64,7 +54,8 @@ const Me = {
 				type: 'setLoading',
 				payload: true
 			})
-			$http.get(tagsAPI, {}).then((res) => { // 播放信息
+			$http.get(tagsAPI, {params: obj}).then((res) => { // 标签信息
+				console.log(res)
 				let data = res.data && res.data.data
         store.commit({
           type: 'getMeInfoTags',
