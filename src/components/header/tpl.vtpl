@@ -17,12 +17,12 @@
             </el-menu-item>
 
             <el-menu-item index="/resume" class="nav-item-right">简历</el-menu-item>
-        <a href="https://github.com/FECangjie" target="_blank">
+        <a href="https://fecangjie.github.io" target="_blank">
           <el-menu-item index="/blog" class="nav-item-right">
               博客
           </el-menu-item>
         </a>
-        <a href="https://fecangjie.github.io" target="_blank">
+        <a href="https://github.com/FECangjie" target="_blank">
           <el-menu-item index="/github" class="nav-item-right">
               github
           </el-menu-item>

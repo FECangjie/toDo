@@ -3,7 +3,7 @@
         <img :src="tooltipPath" width="650px" id="tooltipImage">
     </div>
     <div class="title">
-      <h2>我的书架</h2>
+      <h2>我的工作</h2>
     </div>
     <div class="picture-wall">
       <div class="picture" v-for="(item, index) in pictureHouse" v-if="!(index%2)">
