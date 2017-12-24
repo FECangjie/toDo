@@ -12,11 +12,16 @@ export default Vue.component('tag', {
   data () {
     return {
       tagsShadow:'',
+      loading: true
     }
   },
   computed: {
     getTags () {
+      this.loading = false
       return this.$store.state.Me.tags
+    },
+    getLoading () {
+      return this.$store.state.Me.loading
     }
   },
   methods: {
@@ -25,10 +30,10 @@ export default Vue.component('tag', {
       e.target.style.boxShadow="5px 5px 5px rgb(170, 170, 170)";
      },
      mouseout(e){
-        e.target.style.boxShadow = "";
+      e.target.style.boxShadow = "";
      },
      tagsClick(item){
-        item.count++;
+       this.$store.dispatch('get_Me_Info_Tags', {})
      }
    },
   created () {

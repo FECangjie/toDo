@@ -1,5 +1,5 @@
 <div class="tag">
-    <div class="head" v-for="(type,$typeIndex) in getTags" >
+    <div class="head" v-for="(type,$typeIndex) in getTags" v-if="!getLoading">
         <span class="title">{{type.title}}</span>
         <div class="tags">
             <div class="tags-item" v-for="(tags,$tagsIndex) in type.tags" ref="tagsItem" @mouseover="(e) => mouseover(e)" @mouseout="(e) => mouseout(e)" @click="tagsClick(tags)">
@@ -7,5 +7,7 @@
             </div>
         </div>
     </div>
-
+    <div class="loading" v-if="getLoading">
+      <i class="el-icon-loading"></i>
+    </div>
 </div>

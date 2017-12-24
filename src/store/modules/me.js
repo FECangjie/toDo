@@ -27,7 +27,8 @@ const Me = {
 						title:'生活标签',
 						tags:[]
 				}
-		]
+		],
+		loading: true
 
 	},
 	getters: {
@@ -59,12 +60,20 @@ const Me = {
 		},
 
 		get_Me_Info_Tags({ commit }, obj) {
+			store.commit({
+				type: 'setLoading',
+				payload: true
+			})
 			$http.get(tagsAPI, {}).then((res) => { // 播放信息
 				let data = res.data && res.data.data
         store.commit({
           type: 'getMeInfoTags',
           payload: data.tags
         })
+				store.commit({
+					type: 'setLoading',
+					payload: false
+				})
       }, (err) => {
 
       })
@@ -76,6 +85,9 @@ const Me = {
 		},
 		getMeInfoTags (state, obj) {
 			state.tags = obj.payload
+		},
+		setLoading (state, obj) {
+			state.loading = obj.payload
 		}
 	}
 }
