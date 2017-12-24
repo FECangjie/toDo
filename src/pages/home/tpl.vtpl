@@ -1,4 +1,3 @@
-<div>
-  <Header ></Header>
-  <router-view></router-view>
+<div class="home">
+  <!-- <div class="title" @click="goPath">Hi {{ name }}</div> -->
 </div>
