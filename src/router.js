@@ -4,10 +4,10 @@ import Vue from 'vue'
 import Index from './pages/Index/'
 import Home from './pages/home'
 import Resume from './pages/Resume'
-import workPage from './pages/work'
+import Work from './pages/work'
 import Blog from './pages/Resume'
 import Book from './pages/Book'
-
+import Tag from './pages/tag'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -26,7 +26,7 @@ export const router = new VueRouter({
 
               },{
                   path:'/work',
-                  component: workPage
+                  component: Work
               },{
                   path:'/blog',
                   component: Blog
@@ -39,6 +39,9 @@ export const router = new VueRouter({
               },{
                   path:'/home',
                   component: Home
+              },{
+                path:'/tag',
+                component: Tag
               }
           ]
       },
