@@ -1,11 +1,9 @@
 <div class="tag">
-  <div class="loading" v-if="getLoading">
-    <i class="el-icon-loading"></i>
-  </div>
-    <div class="head" v-for="(type,$typeIndex) in getTags" v-if="!getLoading">
+    <i class="el-icon-loading loading" v-if="getLoading"></i>
+    <div class="head" v-for="(type,$typeIndex) in getTags">
         <span class="title">{{type.title}}</span>
         <div class="tags">
-            <div class="tags-item" v-for="(tag) in type.tags" ref="tagsItem" @mouseover="(e) => mouseover(e)" @mouseout="(e) => mouseout(e)" @click="tagsClick(tag, $typeIndex)">
+            <div class="tags-item" v-for="(tag) in type.tags" ref="tagsItem" @mouseover="(e) => mouseover(e)" @mouseout="(e) => mouseout(e)" @click="tagsClick(tag, $typeIndex)" :style="{ borderColor: getType(tag.count), color: getType(tag.count) }">
                 &nbsp;{{tag.name}}&nbsp;&nbsp;&nbsp;{{tag.count}}
             </div>
         </div>

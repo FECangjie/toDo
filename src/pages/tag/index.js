@@ -12,17 +12,23 @@ export default Vue.component('tag', {
   data () {
     return {
       tagsShadow:'',
-      loading: true
     }
   },
   computed: {
     getTags () {
-      this.loading = false
-      return this.$store.state.Me.tags
+      let tags = this.$store.state.Me.tags
+      tags.forEach((o, i) => {
+        o.tags.sort((a, b) => {
+          return a.count < b.count
+        })
+      })
+      return tags
     },
     getLoading () {
       return this.$store.state.Me.loading
     }
+  },
+  watch: {
   },
   methods: {
       // i Tags[]下标   j  Tags[i].tags[]下标
@@ -34,6 +40,22 @@ export default Vue.component('tag', {
      },
      tagsClick(item, index){
        this.$store.dispatch('get_Me_Info_Tags', {id: item.id, index: index})
+     },
+     getType(count) {
+       if (count < 10) {
+         return "#99CCFF"
+       } else if (count < 25) {
+         return "#9999FF"
+       } else if (count < 50) {
+         return "#0099CC"
+       } else if (count < 100) {
+         return "#9933CC"
+       } else if (count < 200) {
+         return "#CC3333"
+       } else {
+
+       }
+       return "#eee"
      }
    },
   created () {

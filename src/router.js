@@ -29,10 +29,10 @@ export const router = new VueRouter({
                   component: Work
               },{
                   path:'/blog',
-                  component: Blog
+                  component: Home
               },{
                   path:'/git',
-                  component: Blog
+                  component: Home
               },{
                   path:'/book',
                   component: Book
