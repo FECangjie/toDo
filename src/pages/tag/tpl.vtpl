@@ -1,10 +1,9 @@
 <div class="tag">
-    <div class="head" v-for="(type,$typeIndex) in Tags" >
+    <div class="head" v-for="(type,$typeIndex) in getTags" >
         <span class="title">{{type.title}}</span>
         <div class="tags">
-
-            <div class="tags-item" v-for="(tags,$tagsIndex) in type.tags" ref="tagsItem" @mouseover="mouseover($typeIndex,$tagsIndex)" @mouseout="mouseout($typeIndex,$tagsIndex)" @click="tagsClick(tags)">
-                <span>&nbsp;{{tags.name}}&nbsp;&nbsp;&nbsp;{{tags.count}}</span>
+            <div class="tags-item" v-for="(tags,$tagsIndex) in type.tags" ref="tagsItem" @mouseover="(e) => mouseover(e)" @mouseout="(e) => mouseout(e)" @click="tagsClick(tags)">
+                &nbsp;{{tags.name}}&nbsp;&nbsp;&nbsp;{{tags.count}}
             </div>
         </div>
     </div>

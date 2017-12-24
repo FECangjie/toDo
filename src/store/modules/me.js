@@ -1,21 +1,37 @@
 import axios from 'axios'
 import store from 'store'
 
-const infoAPI = '/info.json'
+const infoAPI = '/me/info.json'
+const tagsAPI = '/me/tags.json'
 
-const sideBar = {
+const Me = {
 	state: {
 		info: {
 			name: '',
 			xueli: '',
 			tel: '',
 			email: '',
-		}
+		},
+		tags: [
+				{
+						title:'个人标签',
+						tags:[
+								]
+				},
+				{
+						title:'技术标签',
+						tags:[
+								]
+				},
+				{
+						title:'生活标签',
+						tags:[]
+				}
+		]
+
 	},
-	mutations: {
-		setInfo (state, obj) {
-			state.info = obj.payload
-		}
+	getters: {
+		getMeInfo: state => state.info
 	},
 	actions: {
 		set_Info ({ commit }, obj) {
@@ -40,10 +56,27 @@ const sideBar = {
       }, (err) => {
 
       })
+		},
+
+		get_Me_Info_Tags({ commit }, obj) {
+			$http.get(tagsAPI, {}).then((res) => { // 播放信息
+				let data = res.data && res.data.data
+        store.commit({
+          type: 'getMeInfoTags',
+          payload: data.tags
+        })
+      }, (err) => {
+
+      })
 		}
 	},
-	getters: {
-		getMeInfo: state => state.info
+	mutations: {
+		setInfo (state, obj) {
+			state.info = obj.payload
+		},
+		getMeInfoTags (state, obj) {
+			state.tags = obj.payload
+		}
 	}
 }
-export default sideBar
+export default Me
