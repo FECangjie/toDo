@@ -37,10 +37,6 @@ export default Vue.component('WorkPage', {
       for (let picture of this.pictureHouse) {
         if (this.pictureHouse1.length > this.pictureHouse2.length ) {
           this.pictureHouse2.push(picture);
-        } else if (this.pictureHouse2.length > this.pictureHouse3.length) {
-          this.pictureHouse3.push(picture);
-        } else if (this.pictureHouse3.length > this.pictureHouse4.length) {
-          this.pictureHouse4.push(picture);
         } else {
           this.pictureHouse1.push(picture);
         }

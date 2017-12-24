@@ -27,35 +27,9 @@
             </div>
         </div>
 
-        <!-- 第二列 -->
-        <div id="picture-wall2">
-            <div class="picture" v-for="item in pictureHouse2" >
-                <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
-                <div> 
-                    <span >{{item.title}}</span>
-                </div>
-            </div>
-        </div>
+        
 
-        <!-- 第三列 -->
-        <div id="picture-wall3">
-            <div class="picture" v-for="item in pictureHouse3" >
-                <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
-                <div> 
-                    <span >{{item.title}}</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 第四列 -->
-        <div id="picture-wall4">
-            <div class="picture" v-for="item in pictureHouse4" >
-                <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture"> 
-                <div> 
-                    <span >{{item.title}}</span>
-                </div>
-            </div>
-        </div>
+        
       <div class="picture" v-for="(item, index) in pictureHouse" v-if="index%2">
           <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
           <div>
