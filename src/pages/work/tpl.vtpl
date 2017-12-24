@@ -1,8 +1,12 @@
 <div class="work-page">
+    <!-- 浮窗 -->
     <div v-show="showTooltip" :style="{'left':tooltipX,'top':tooltipY}" id="tooltip">
         <img :src="tooltipPath" width="650px" id="tooltipImage">   
     </div>
+
+    
     <div class="picture-wall">
+        <!-- 第一列 -->
         <div id="picture-wall1">
             <div class="picture" v-for="item in pictureHouse1" >
                 <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
@@ -11,6 +15,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- 第二列 -->
         <div id="picture-wall2">
             <div class="picture" v-for="item in pictureHouse2" >
                 <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
@@ -19,6 +25,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- 第三列 -->
         <div id="picture-wall3">
             <div class="picture" v-for="item in pictureHouse3" >
                 <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture">
@@ -27,6 +35,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- 第四列 -->
         <div id="picture-wall4">
             <div class="picture" v-for="item in pictureHouse4" >
                 <img :src = 'item.picturePath' class="image" @mousemove="mouseoverPicture" @mouseout="mouseoutPicture"> 
