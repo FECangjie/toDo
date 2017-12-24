@@ -1,9 +1,3 @@
-/**
- *
- * 没有加载效果 连续点击标签之后 会出现 选中文字效果（）
- *
- */
-
 import Vue from 'vue'
 import tpl from './tpl.vtpl'
 import './style.less'
@@ -19,7 +13,7 @@ export default Vue.component('tag', {
       let tags = this.$store.state.Me.tags
       tags.forEach((o, i) => {
         o.tags.sort((a, b) => {
-          return a.count < b.count
+          return b.count - a.count // 简单排序
         })
       })
       return tags

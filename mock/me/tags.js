@@ -109,19 +109,19 @@ module.exports = function (path, param, context) {
                 "id": 7
             }, {
                 "name": "激情生活",
-                "count": 11,
+                "count": 66,
                 "id": 8
             }, {
                 "name": "游戏控",
-                "count": 11,
+                "count": 1,
                 "id": 9
             }, {
                 "name": "悬疑电影",
-                "count": 11,
+                "count": 1,
                 "id": 10
             }, {
                 "name": "闪光",
-                "count": 11,
+                "count": 110,
                 "id": 11
             }]
         }]
