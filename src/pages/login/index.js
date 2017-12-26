@@ -15,7 +15,6 @@ export default Vue.component('LoginPage', {
 
   methods: {
     goPath () {
-      debugger
       router.push('/home')
     },
   },

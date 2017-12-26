@@ -6,6 +6,9 @@ const tagsAPI = '/me/tags.json'
 
 const Me = {
 	state: {
+		login: {
+			count: 'x'
+		},
 		info: {
 			name: '',
 			xueli: '',
@@ -32,12 +35,26 @@ const Me = {
 
 	},
 	getters: {
-		getMeInfo: state => state.info
+		getMeInfo: state => state.info,
+		getLogin: state => state.login
 	},
 	actions: {
+		set_Login ({ commit }, obj) { // 登陆
+
+			$http.get('/api/login.json', {
+	      params: { user: '7nxo'}
+	    }).then((res) => {
+	        let result = res.data
+					store.commit({
+	          type: 'setLogin',
+	          payload: result.data
+	        })
+	      }
+	    )
+		},
+
 		set_Info ({ commit }, obj) {
 			$http.get(infoAPI, {}).then((res) => { // 播放信息
-				console.log(res)
 				let data = res.data && res.data.data
         store.commit({
           type: 'setInfo',
@@ -71,6 +88,9 @@ const Me = {
 		}
 	},
 	mutations: {
+		setLogin (state, obj) {
+			state.login = obj.payload
+		},
 		setInfo (state, obj) {
 			state.info = obj.payload
 		},

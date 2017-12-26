@@ -1,3 +1,3 @@
 <div class="home">
-  <div class="title" @click="goPath">Hi 欢迎<br/>{{ name }}</div>
+  <div class="title" @click="goPath">Hi 欢迎<br/>神秘{{getInfo}}号访客</div>
 </div>

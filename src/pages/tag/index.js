@@ -47,7 +47,7 @@ export default Vue.component('tag', {
        } else if (count < 200) {
          return "#CC3333"
        } else {
-
+         return "#990000"
        }
        return "#eee"
      }

@@ -12,26 +12,20 @@ export default Vue.component('c-header', {
       msg: ''
     }
   },
+  computed: {
+    getInfo() {
+      debugger
+      return this.$store.state.Me.login.count
+    }
+  },
   methods: {
      handleSelect(key, keyPath) { // nav select
      }
    },
 
   mounted() {
-   let me = this
-   $http.get('/api/login.json', {
-     params: { user: '7nxo'}
-   }).then(
-     (res) => {
-       let result = res.data
-       if (result.code === 1) {
-         this.name = '神秘' + result.data.count + '号访客'
-       }
-     }
-   )
   },
   created () {
-
   },
 
   template: tpl
