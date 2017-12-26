@@ -15,7 +15,6 @@ function RainyDay(options, canvas) {
 		opacity: 0.8,
 		blur: 10,
 		crop: [0, 0, this.img.naturalWidth, this.img.naturalHeight],
-		// crop: [0, 0, this.img.naturalWidth, this.img.naturalHeight],
 		enableSizeChange: true,
 		parentElement: document.getElementById('home'),
 		fps: 30,
