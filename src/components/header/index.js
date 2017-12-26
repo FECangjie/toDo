@@ -14,8 +14,7 @@ export default Vue.component('c-header', {
   },
   computed: {
     getInfo() {
-      debugger
-      return this.$store.state.Me.login.count
+      return this.$store.getters.getLogin.count
     }
   },
   methods: {

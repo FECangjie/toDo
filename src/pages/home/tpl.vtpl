@@ -1,3 +1,13 @@
-<div class="home">
-  <div class="title" @click="goPath">Hi 欢迎<br/>神秘{{getInfo}}号访客</div>
+<div class="home" id="home">
+  <div class="title" @click="goPath">Hi 欢迎：神秘{{getInfo}}号访客</div>
+  <div class="box">
+    <span>扫一扫</span>
+    <div class="img">
+      <img src="src/assets/img/qq.jpeg" alt="" class="">
+    </div>
+    <div class="img">
+      <img src="src/assets/img/wx.jpeg" alt="" class="">
+    </div>
+    <img id="background" class="bg" alt="background" src="" />
+  </div>
 </div>

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
 import { router } from 'router'
+import RainyDay from 'common/rainday.js'
 
 export default Vue.component('home', {
   data () {
@@ -22,17 +23,29 @@ export default Vue.component('home', {
     goPath () {
       router.push('/home')
     },
+    run() {
+      // debugger
+      var image = document.getElementById('background');
+      image.onload = function() {
+          var engine = new RainyDay({
+              image: this
+          });
+          engine.rain([ [0, 1, 10], [3, 3, 0.3] ], 50);
+      };
+      image.crossOrigin = 'anonymous';
+      image.src = 'src/assets/img/bg.jpg';
+    }
   },
   mounted() {
     let me = this
-    this.$store.dispatch('set_Login', {})
+    this.run();
   },
   beforeUpdate: function () {
   },
   updated: function () {
   },
   created () {
-
+    this.$store.dispatch('set_Login', {})
   },
   template: tpl
 })
