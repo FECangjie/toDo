@@ -10,7 +10,9 @@ export default Vue.component('home', {
       name: '神秘x号访客',
       currentDate: moment(new Date()).format('YYYY-MM-DD'),
       btuText: '进入',
-      loading: false
+      loading: false,
+      bgWidth:window.innerHeight,
+      bgHeight:window.innerHeight,
     }
   },
   computed: {
@@ -37,7 +39,12 @@ export default Vue.component('home', {
     }
   },
   mounted() {
-    let me = this
+    const me = this
+    
+    this.bgHeight = window.innerHeight;
+    this.bgWidth = window.innerWidth;
+    console.log(this.bgHeight,this.bgWidth);
+    console.log('refresh')
     this.run();
   },
   beforeUpdate: function () {

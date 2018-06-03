@@ -8,6 +8,7 @@
     <div class="img">
       <img src="src/assets/img/wx.jpeg" alt="" class="">
     </div>
-    <img id="background" class="bg" alt="background" src="" />
+    <img id="background" class="bg"  alt="background" src="" />
+    <div>hasdhfjas</div>
   </div>
 </div>

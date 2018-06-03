@@ -9,7 +9,7 @@
     "open": "cross-env ENV=DEV webpack-dev-server --config wp.config.js --inline --hot --quiet --progress --content-base pages/ --host 127.0.0.1 --port 8080 --open ",
     "build": "cross-env ENV=PROD CDN='/dist/' webpack --config webpack/wp.config.js",
     "cp": "cp -rf ./dist ../../7nxo/public && cp -rf ./index.html ../../7nxo/views/",
-    "start": "npm run node"
+    "start": "npm run node "
   },
   "dependencies": {
     "element-ui": "^2.0.8",
